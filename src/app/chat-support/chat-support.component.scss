@@ -1,0 +1,131 @@
+#message_item {
+    background-color: rgb(255, 255, 255);
+    ;
+    border: 1px solid black;
+    font-size: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+#chatbox {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 0px;
+    text-align: center;
+    box-shadow: black 2px 2px 5px;
+}
+
+#message_box {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    min-height: 100px;
+    padding: 10px;
+    margin: 10px;
+}
+
+#chatsupport {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+#quick_chatbox {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    text-align: center;
+    padding: 0px;
+    box-shadow: black 2px 2px 5px;
+}
+
+#overall_chat_history {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    text-align: center;
+    margin: 25px 25px 25px 25px;
+}
+
+#chat_init {
+    border: 1px solid #00000033;
+    border-radius: 5px;
+    margin: 10px 10px 10px 10px;
+    min-width: 200px;
+}
+
+#chat_window_heading {
+    color: black;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    ;
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+#chat_window {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.btn-primary {
+    background-color: rgb(255, 255, 255);
+    ;
+    border: 1px solid black;
+    font-size: 12px;
+    padding: 10px;
+    font-weight: bolder;
+    color: black;
+    border-radius: 5px;
+}
+
+.btn-primary:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    ;
+}
+
+#select_op_head {
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.2);
+    ;
+}
+
+th {
+    color: black;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid black;
+    font-size: 18px;
+}
+
+td {
+    background-color: white;
+    padding: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2)
+}
+
+table.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table {
+    box-shadow: black 2px 2px 5px;
+}
+
+#tickets_heading {
+    color: black;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    ;
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+#ticket_history {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    ;
+    padding: 0px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: black 2px 2px 5px;
+}

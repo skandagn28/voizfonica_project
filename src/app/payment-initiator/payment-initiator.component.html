@@ -1,0 +1,146 @@
+<div id="payment" class="container">
+    <div id="payment_heading">
+        PAYMENT
+    </div>
+    <div id="payment_content">
+        Please select your preferred mode of payment
+        <br>
+        <br>
+        <form>
+            <div class="radio">
+                <label><input [(ngModel)]="payment_mode" type="radio" name="payment_mode" value="1">&nbsp;Credit card / Debit card</label>
+            </div>
+            <div class="radio">
+                <label><input [(ngModel)]="payment_mode" type="radio" name="payment_mode" value="2">&nbsp;Net banking</label>
+            </div>
+            <div class="radio">
+                <label><input [(ngModel)]="payment_mode"  type="radio" name="payment_mode" value="3">&nbsp;Other wallets</label>
+            </div>
+        </form>
+        <br>
+        <br>
+        <div *ngIf="payment_mode==1" id="card_payment" class="container">
+            <div id="card_payment_heading">
+                CREDIT & DEBIT CARDS
+            </div>
+            <form #f="ngForm" (ngSubmit)="validate(f)">
+                <div id="card_payment_content">
+                    <b>Please enter your card details</b>
+                    <br>
+                    <br>
+
+                    <div class="row">
+
+                        <div class="col-md-4">
+
+                            Card number
+                            <input type="text" pattern="^[0-9]*$" class="form-control" [(ngModel)]="card_number" #card_number1="ngModel" name="card_number" required minlength="12" maxlength="12">
+                            <br>
+                            <div class="error" *ngIf="((f.submitted) || (card_number1.touched)) && (!card_number1.valid)">
+                                Enter proper card number!!!<br><br>
+                            </div>
+                            Name on the card
+                            <input pattern="^[a-zA-z ]*$" type="text" class="form-control" [(ngModel)]="card_name" #card_name1="ngModel" name="card_name" required>
+                            <br>
+                            <div class="error" *ngIf="((f.submitted) || (card_name1.touched)) && (!card_name1.valid)">
+                                Enter proper card name!!!<br><br>
+                            </div>
+                            CVV number
+                            <input type="text" pattern="^[0-9]*$" class="form-control" [(ngModel)]="card_cvv" #card_cvv1="ngModel" name="card_cvv" required maxlength="3" minlength="3">
+                            <br>
+                            <div class="error" *ngIf="((f.submitted) || (card_cvv1.touched)) && (!card_cvv1.valid)">
+                                Enter proper card cvv number!!! <br><br>
+                            </div>
+                            Expiration date
+                            <input type="date" class="form-control" [(ngModel)]="card_expiry" name="card_expiry" #card_expiry1="ngModel" required>
+                            <br>
+                            <div class="error" *ngIf="((f.submitted) || (card_expiry1.touched)) && (!card_expiry1.valid)">
+                                Enter proper date!!! <br><br>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="radio" name="card_type" checked> &nbsp;
+                            <img src="../../assets/images/visa.png" height="50" width="50">
+                            <br>
+                            <br>
+                            <input type="radio" name="card_type"> &nbsp;
+                            <img src="../../assets/images/mastercard.jpg" height="50" width="50">
+                        </div>
+
+                    </div>
+                    <br>
+                    <button type="submit" class="btn-primary" id="card_make_payment">Make payment</button>
+                    <br>
+                    <br>
+
+                </div>
+            </form>
+        </div>
+        <div *ngIf="payment_mode==2" id="redirection_net_banking" class="container">
+            <div id="net_banking_heading">
+                NET BANKING
+            </div>
+            <br>
+            <b>Please select the preferred bank</b>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-md-9">
+                    <br>
+
+                    <select>
+                    <option>
+                        ICICI bank
+                    </option>
+                    <option>
+                        State Bank of India
+                    </option>
+                    <option>
+                        Axis Bank
+                    </option>
+                    <option>
+                        HDFC Bank
+                    </option>
+                </select>
+                </div>
+                <div class="col-md-3">
+                    <img src="../../assets/images/billdesk.jpg" height="50px" width="100px">
+                </div>
+            </div>
+            <br>
+            <br>
+            <b>Note: You will be redirected for the payment ...</b>
+            <br>
+            <button class="btn-primary" id="redirect_accept">Ok</button>
+            <br>
+            <br>
+        </div>
+        <div *ngIf="payment_mode==3" id="redirection_wallets" class="container" style="width: 100%">
+            <div id="wallets_heading">
+                WALLETS
+            </div>
+            <br>
+            <b>Please select the preferred bank</b>
+            <div class="row">
+                <div class="col-md-3">
+                    <input type="radio" name="wallet_options"> <img src="../../assets/images/phonepe.png" height="50px" width="100px">
+                </div>
+                <div class="col-md-3">
+                    <input type="radio" name="wallet_options"> <img src="../../assets/images/paytm.png" height="50px" width="100px">
+                </div>
+                <div class="col-md-3">
+                    <input type="radio" name="wallet_options"> <img src="../../assets/images/amazon.png" height="50px" width="100px">
+                </div>
+                <div class="col-md-3">
+                    <input type="radio" name="wallet_options"> <img src="../../assets/images/google.png" height="50px" width="100px">
+                </div>
+            </div>
+            <br>
+            <b>Note: You will be redirected for the payment ...</b>
+            <button class="btn-primary" id="redirect_accept">Ok</button>
+
+        </div>
+    </div>
+</div>
+<br>
+<br>

@@ -1,0 +1,108 @@
+<br>
+<br>
+<div id="quick_chatbox" class="container">
+    <div id="select_op_head"><b>RAISE A QUICK TICKET</b></div>
+    <br>
+    <div class="row">
+        <div *ngFor="let row of rows" class="col-md-3">
+            <button id="chat_init" class="btn-primary">
+                            {{row}}
+                        </button>
+        </div>
+    </div>
+    <br>
+</div>
+<br>
+<div id="chatbox" class="container">
+    <div id="select_op_head"><b>CHAT HISTORY</b></div>
+    <div class="row" *ngFor="let msg of msgs">
+        <div class="col-md-6"></div>
+        <div class="col-md-6">
+            <div id="message_item">
+                {{msg}}
+            </div>
+        </div>
+    </div>
+    <br>
+    <form #f="ngForm" (ngSubmit)="save(f)">
+        <div class="row">
+            <div class="col-md-9">
+                <input class="form-control" type="text" name="message_box" id="message_box" [(ngModel)]="message_box">
+            </div>
+            <div class="col-md-3">
+                <br>
+                <button id="sub" class="btn-primary">Send</button>
+            </div>
+        </div>
+    </form>
+    <br>
+    <br>
+</div>
+<app-transactions></app-transactions>
+<br>
+<br>
+<div id="ticket_history" class="container">
+    <div id="tickets_heading">
+        TICKETS
+    </div>
+    <br>
+    <table border="1" id="ticket_register" class="center">
+        <tr>
+            <th>
+                S.No.
+            </th>
+            <th>
+                Ticket Id.
+            </th>
+            <th>
+                Date
+            </th>
+            <th>
+                Time
+            </th>
+            <th>
+                State
+            </th>
+            <th>
+                Reason to take action
+            </th>
+            <th>
+                Action on ticket
+            </th>
+        </tr>
+        <tr *ngFor="let ticketdet of ticketdets">
+            <td>
+                {{ticketdet.sno}}
+            </td>
+            <td>
+                {{ticketdet.tid}}
+            </td>
+            <td>
+                {{ticketdet.date}}
+            </td>
+            <td>
+                {{ticketdet.time}}
+            </td>
+            <td>
+                {{ticketdet.state}}
+            </td>
+            <td>
+                <input type="text">
+            </td>
+            <td *ngIf="ticketdet.state=='open'">
+                <button class="btn-primary">
+                    Close ticket
+                </button>
+            </td>
+            <td *ngIf="ticketdet.state=='closed'">
+                <button class="btn-primary">
+                    Open ticket
+                </button>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <br>
+</div>
+<br>
+<br>

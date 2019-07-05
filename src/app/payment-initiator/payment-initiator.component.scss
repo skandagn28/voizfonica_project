@@ -1,0 +1,118 @@
+#payment {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    ;
+    padding: 0px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: black 2px 2px 5px;
+}
+
+#payment_heading {
+    color: black;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    ;
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+#payment_content {
+    padding: 25px;
+}
+
+.btn-primary {
+    background-color: rgb(255, 255, 255);
+    ;
+    border: 1px solid black;
+    font-size: 18px;
+    padding: 10px;
+    font-weight: bolder;
+    color: black;
+    border-radius: 5px;
+}
+
+.btn-primary:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    ;
+}
+
+#card_payment {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 0px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: black 2px 2px 5px;
+}
+
+#card_payment_heading {
+    color: black;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+#card_payment_content {
+    padding: 25px;
+}
+
+#card_make_payment {
+    float: right;
+}
+
+#redirection_net_banking {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 0px;
+    text-align: center;
+    max-height: 300px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: black 2px 2px 5px;
+}
+
+#redirect_accept {
+    float: right;
+    padding: 5px;
+    min-width: 100px;
+    margin: 10px;
+}
+
+#redirection_wallets {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    ;
+    padding: 0px;
+    text-align: center;
+    max-height: 250px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: black 2px 2px 5px;
+}
+
+select {
+    border-color: rgba(0, 0, 0, 0.2);
+    min-width: 300px;
+}
+
+select:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.error {
+    color: red;
+}
+
+#net_banking_heading {
+    color: black;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+#wallets_heading {
+    color: black;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    font-weight: bolder;
+}

@@ -1,0 +1,70 @@
+<br>
+<br>
+<div id="transaction_history" class="container">
+    <div id="transactions_heading">
+        TRANSACTIONS
+    </div>
+    <br>
+    <table border="1" id="transaction_register" class="center">
+        <tr>
+            <th>
+                S.No.
+            </th>
+            <th>
+                Transaction Id.
+            </th>
+            <th>
+                Amount
+            </th>
+            <th>
+                Date
+            </th>
+            <th>
+                Time
+            </th>
+            <th>
+                State
+            </th>
+            <th>
+                Invoice
+            </th>
+            <th>
+                Raise ticket
+            </th>
+        </tr>
+        <tr *ngFor="let row of rowvalues">
+            <td>
+                {{row.sno}}
+            </td>
+            <td>
+                {{row.tid}}
+            </td>
+            <td>
+                {{row.amt}}
+            </td>
+            <td>
+                {{row.date}}
+            </td>
+            <td>
+                {{row.time}}
+            </td>
+            <td>
+                {{row.state}}
+            </td>
+            <td>
+                <button class="btn-primary">
+                Download Invoice
+            </button>
+            </td>
+            <td>
+                <button class="btn-primary">
+                Raise Ticket
+            </button>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <br>
+</div>
+<br>
+<br>
