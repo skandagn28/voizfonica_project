@@ -1,4 +1,26 @@
-<div class="row">
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+            </div>
+
+            <div class="col-md-4">
+
+                <ul class="nav navbar-nav" style="display: inline;text-align:center">
+                    <li class.active="selectedpane==1"><a href="javascript:;" (click)="changepane(1)">Recommended Plans</a></li>
+                    <li class.active="selectedpane==2"><a href="javscript:;" (click)="changepane(2)">All plans</a></li>
+
+
+                </ul>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+
+    </div>
+
+</nav>
+
+<div class="row" *ngIf="selectedpane==1">
     <div class="col-md-4">
         <ul class="price">
             <li class="header">BASIC PLAN</li>
@@ -33,4 +55,62 @@
             <li class="grey"><a href="#" class="button">Choose</a></li>
         </ul>
     </div>
+</div>
+
+<div class="row" *ngIf="selectedpane==2">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Plan Name</th>
+                <th>Intenet Speed</th>
+                <th>Broadband Data</th>
+                <th>Monthly Payment</th>
+                <th>Choose</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="info">
+                <td>Mini Plan</td>
+                <td>30 Mbps</td>
+                <td>120 GB</td>
+                <td>500 Mbps</td>
+                <td>Rs. 650</td>
+                <td><button class="button">Choose</button></td>
+            </tr>
+            <tr class="info">
+                <td>Basic Plan</td>
+                <td>100 Mbps</td>
+                <td>1000 GB</td>
+                <td>1 Gbps</td>
+                <td>Rs. 750</td>
+                <td><button class="button">Choose</button></td>
+            </tr>
+            <tr class="info">
+                <td>Economy Plan</td>
+                <td>150 Mbps</td>
+                <td>1500 GB</td>
+                <td>1 Gbps</td>
+                <td>Rs. 900</td>
+                <td><button class="button">Choose</button></td>
+            </tr>
+            <tr class="active">
+                <td>Mega Plan</td>
+                <td>250 Mbps</td>
+                <td>2000 GB</td>
+                <td>2 Gbps</td>
+                <td>Rs. 1000</td>
+                <td><button class="button">Choose</button></td>
+            </tr>
+            <tr class="info">
+                <td>High Speed Plan</td>
+                <td>1 Gbps</td>
+                <td>3000 GB</td>
+                <td>2 Gbps</td>
+                <td>Rs. 1700</td>
+                <td><button class="button">Choose</button></td>
+            </tr>
+
+        </tbody>
+    </table>
 </div>

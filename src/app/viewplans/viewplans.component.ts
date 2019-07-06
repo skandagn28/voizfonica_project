@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewplansComponent implements OnInit {
 
+  selectedpane: number;
   constructor() { }
 
   ngOnInit() {
+    this.selectedpane=1;
   }
+  changepane(pane: number){
+   
+    this.selectedpane = pane;
+}
 
 }
