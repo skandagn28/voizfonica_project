@@ -57,13 +57,40 @@
                 <form #f="ngForm" (ngSubmit)="validate(f)">
                     <div class="form-group input-group">
 
-                        <input name="" class="form-control" placeholder="First Name" type="text" required>
+                        <input name="firstname" pattern="^[a-zA-Z ]*$" class="form-control" placeholder="First Name" [(ngModel)]="firstnameText" #firstname="ngModel" type="text" required>
+                        <div *ngIf="(f.submitted || (firstname.dirty || firstname.touched)) && firstname.invalid ">
+                            <div *ngIf="firstname.errors.required" class="error">
+                                Firstname is required!
+                            </div>
+                            <div *ngIf="firstname.invalid && !firstname.errors.required" class="error">
+                                Invalid firstname
+                            </div>
+
+                        </div>
 
 
-                        <input name="" class="form-control" placeholder="Last Name" type="text" required>
+                        <input name="lastname" pattern="^[a-zA-Z ]*$" class="form-control" placeholder="last name" [(ngModel)]="lastnameText" #lastname="ngModel" type="text" required>
+                        <div *ngIf="(f.submitted || (lastname.dirty || lastname.touched)) && lastname.invalid ">
+                            <div *ngIf="lastname.errors.required" class="error">
+                                lastname is required!
+                            </div>
+                            <div *ngIf="lastname.invalid && !lastname.errors.required" class="error">
+                                Invalid lastname
+                            </div>
+
+                        </div>
 
 
-                        <input name="" class="form-control" placeholder="Email" type="email" required>
+                        <input name="email" class="form-control" placeholder="Email" [(ngModel)]="emailText" #email="ngModel" type="email" email required>
+
+                        <div *ngIf="(f.submitted || (email.dirty || email.touched)) && email.invalid ">
+                            <div *ngIf="email.errors.required" class="error">
+                                Email is required!
+                            </div>
+                            <div *ngIf="email.errors.email && !email.errors.required" class="error">
+                                Please enter the valid email ID
+                            </div>
+                        </div>
 
 
                         <select class="form-control" style="width: 150px;max-height: 80px;">
@@ -72,8 +99,18 @@
                                         <option value="2">+198</option>
                                         <option value="3">+701</option>
                                     </select>
-                        <input name="" class="form-control" placeholder="Phone number" type="text" style="max-width: 200px;" required>
 
+                        <input name="phone" pattern="^[0-9]{10}$" class="form-control" placeholder="Phone number" type="text" style="max-width: 200px;" [(ngModel)]="phText" #phone="ngModel" phone required>
+
+                        <div *ngIf="(f.submitted || (phone.dirty || phone.touched)) && phone.invalid ">
+                            <div *ngIf="phone.errors.required" class="error">
+                                Phone Number is required!
+                            </div>
+                            <div *ngIf="phone.invalid" class="error">
+                                Invalid Phone Number!
+                            </div>
+
+                        </div>
 
                         <select class="form-control">
                                         <option selected=""> Govt. ID Proof</option>
