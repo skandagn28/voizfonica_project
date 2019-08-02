@@ -106,21 +106,34 @@
                             <div *ngIf="phone.errors.required" class="error">
                                 Phone Number is required!
                             </div>
-                            <div *ngIf="phone.invalid" class="error">
+                            <div *ngIf="phone.invalid && !phone.errors.required" class="error">
                                 Invalid Phone Number!
                             </div>
 
                         </div>
 
-                        <select class="form-control">
+                        <select class="form-control" required>
                                         <option selected=""> Govt. ID Proof</option>
                                         <option>PAN Card</option>
                                         <option>Aadhar card</option>
                                         <option>Voter's ID</option>
                                     </select>
-                        <input name="" class="form-control" placeholder="Proof" type="text" required>
+
+                        
+                        <input name="proofidentry" class="form-control" placeholder="Enter your proof Number" type="text" [(ngModel)]="proofidText" #proofid="ngModel" proofid required>
+
+                        <div *ngIf="(f.submitted || (proofid.dirty || proofid.touched)) && proofid.invalid ">
+                            <div *ngIf="proofid.errors.required" class="error">
+                                proof id number is required!
+                            </div>
+                            <div *ngIf="proofid.invalid && !proofid.errors.required" class="error">
+                                Invalid proofid!
+                            </div>
+
+                        </div>
 
 
+                        
                         <input class="form-control" id="password" name="password" placeholder="Create password" type="password" [(ngModel)]="password" required>
 
                         <input class="form-control" id="retypepassword" name="retypepassword" placeholder="Repeat password" type="password" [(ngModel)]="retypepassword" required>
