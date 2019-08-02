@@ -8,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
+  proof: string;
   constructor() { }
 
   ngOnInit() {
+    this.proof= ""
+  }
+
+  proofChange(p){
+    this.proof=p.target.value
   }
 
   validate(f){

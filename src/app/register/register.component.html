@@ -112,29 +112,75 @@
 
                         </div>
 
-                        <select class="form-control" required>
-                                        <option selected=""> Govt. ID Proof</option>
-                                        <option>PAN Card</option>
+                        <div class="form-group">
+
+                            <select class="form-control" (change)="proofChange($event)" required>
+                                        <option selected="1">Select your Govt proof</option>
+
+                                        <option >PAN Card</option>
                                         <option>Aadhar card</option>
-                                        <option>Voter's ID</option>
+                                        <option>Voter id</option>
                                     </select>
+                        </div>
 
-                        
-                        <input name="proofidentry" class="form-control" placeholder="Enter your proof Number" type="text" [(ngModel)]="proofidText" #proofid="ngModel" proofid required>
 
-                        <div *ngIf="(f.submitted || (proofid.dirty || proofid.touched)) && proofid.invalid ">
-                            <div *ngIf="proofid.errors.required" class="error">
-                                proof id number is required!
+                        <div *ngIf="proof == 'PAN Card'">
+                            <input name="proofidentry1" pattern="^[A-Z]{5}[0-9]{4}[A-Z]{1}$" class="form-control" placeholder="Enter your {{proof}} Number" type="text" [(ngModel)]="proofidText1" #proofid1="ngModel" proofid1 required>
+                            <div *ngIf="(f.submitted || (proofid1.dirty || proofid1.touched)) && proofid1.invalid ">
+                                <div *ngIf="proofid1.errors.required" class="error">
+                                    {{proof}} is required!
+                                </div>
+                                <div *ngIf="proofid1.invalid && !proofid1.errors.required" class="error">
+                                    Invalid {{proof}}!
+                                </div>
+
                             </div>
-                            <div *ngIf="proofid.invalid && !proofid.errors.required" class="error">
-                                Invalid proofid!
+                        </div>
+
+                        <div *ngIf="proof == 'Aadhar card'">
+                            <input name="proofidentry2" pattern="^[0-9 ]{5}[0-9 ]{5}[0-9]{4}$" class="form-control" placeholder="Enter your {{proof}} Number" type="text" [(ngModel)]="proofidText2" #proofid2="ngModel" proofid2 required>
+                            <div *ngIf="(f.submitted || (proofid2.dirty || proofid2.touched)) && proofid2.invalid ">
+                                <div *ngIf="proofid2.errors.required" class="error">
+                                    {{proof}} is required!
+                                </div>
+                                <div *ngIf="proofid2.invalid && !proofid2.errors.required" class="error">
+                                    Invalid {{proof}}!
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div *ngIf="proof == 'Voter id'">
+                            <input name="proofidentry3" pattern="^[A-Z]{3}[0-9]{7}$" class="form-control" placeholder="Enter your {{proof}} Number" type="text" [(ngModel)]="proofidText3" #proofid3="ngModel" proofid3 required>
+                            <div *ngIf="(f.submitted || (proofid3.dirty || proofid3.touched)) && proofid3.invalid ">
+                                <div *ngIf="proofid3.errors.required" class="error">
+                                    {{proof}} is required!
+                                </div>
+                                <div *ngIf="proofid3.invalid && !proofid3.errors.required" class="error">
+                                    Invalid {{proof}}!
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                        <input class="form-control" pattern="^[a-zA-Z0-9!@#$%^&*_(+{:;}) ]{8,32}$" id="password" name="passwordtxt" placeholder="Create password" type="password" [(ngModel)]="passwordtext" #passwordtxt="ngModel" passwordtxt required>
+                        <div *ngIf="(f.submitted || (passwordtxt.dirty || passwordtxt.touched)) && passwordtxt.invalid ">
+                            <div *ngIf="passwordtxt.errors.required" class="error">
+                                password is empty!
+                            </div>
+                            <div *ngIf="passwordtxt.invalid && !passwordtxt.errors.required" class="error">
+                                <ul type="none">
+                                    <li>INVALID PASSWORD</li>
+                                    <li>Type a password of length between 8 and 32 and should contain atleast one special character and one number</li>
+
+                                </ul>
+
                             </div>
 
                         </div>
 
-
-                        
-                        <input class="form-control" id="password" name="password" placeholder="Create password" type="password" [(ngModel)]="password" required>
 
                         <input class="form-control" id="retypepassword" name="retypepassword" placeholder="Repeat password" type="password" [(ngModel)]="retypepassword" required>
                         <div *ngIf="password!=retypepassword">
