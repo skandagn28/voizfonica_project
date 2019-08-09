@@ -67,13 +67,25 @@
         <div class="panel-body " style="margin-top: 0px; padding: 0px; box-shadow: black 2px 2px 5px ">
             <div class="tab-content " style="background:rgb(214, 214, 214) ">
                 <div *ngIf="selectedpane==1" style="padding:20px; ">
+                        <form #f="ngForm" (ngSubmit)="validate(f)">
 
                     <div class="form-group " style="padding-left:20px;padding-right:20px;padding-top:0px;padding-bottom:0px ">Switch to VoizFonica. Change to VoizFonica without losing your number to your old service provier. </div>
 
-                    <div class="form-group " style="padding-left:20px;padding-right:30px;padding-top:10px;padding-bottom:10px ">MOBILE : +91 <input type="text " /></div>
-                    <div class="form-group " style="padding-left:20px;padding-right:30px;padding-top:10px;padding-bottom:0px "><button type="button " class="btn btn-primary "> Get Started !!</button></div>
+                    <div class="form-group " style="padding-left:20px;padding-right:30px;padding-top:10px;padding-bottom:10px ">MOBILE : +91 <input name="phone" pattern="^[0-9]{10}$" class="form-control" placeholder="Phone number" type="text" style=" display: inline ; width: 200px; margin-right: 25px;" [(ngModel)]="phText" #phone="ngModel" phone required>
+
+                        <div *ngIf="(f.submitted || (phone.dirty || phone.touched)) && phone.invalid ">
+                            <div *ngIf="phone.errors.required" class="error">
+                                Phone Number is required!
+                            </div>
+                            <div *ngIf="phone.invalid && !phone.errors.required" class="error">
+                                Invalid Phone Number!
+                            </div>
+
+                        </div></div>
+                    <div class="form-group " style="padding-left:20px;padding-right:30px;padding-top:10px;padding-bottom:0px "><button type="button " class="btn btn-primary "> Get Started !!</button></div></form>
                 </div>
                 <div *ngIf="selectedpane==2" style="padding-top:20px; padding-bottom: 20px">
+                        <form #f="ngForm" (ngSubmit)="validate(f)">
 
                     <div class="form-group " style="padding-left:20px;padding-right:20px;padding-top:0px;padding-bottom:0px ">Subscribe to VoizFonica Postpaid. Benefits of postpaid account:
                         <ul>
@@ -83,11 +95,22 @@
                         </ul>
                     </div>
 
-                    <div class="form-group " style="padding-left:20px;padding-right:30px;padding-top:10px;padding-bottom:10px ">MOBILE : +91 <input type="text " /></div>
-                    <div class="form-group " style="padding-left:20px;padding-right:30px;padding-top:10px;padding-bottom:0px "><button type="button " class="btn btn-primary "> Get Started !!</button></div>
+                    <div class="form-group " style="padding-left:20px;padding-right:30px;padding-top:10px;padding-bottom:10px ">MOBILE : +91 <input name="phone" pattern="^[0-9]{10}$" class="form-control" placeholder="Phone number" type="text" style=" display: inline ; width: 200px; margin-right: 25px;" [(ngModel)]="phText" #phone="ngModel" phone required>
+
+                        <div *ngIf="(f.submitted || (phone.dirty || phone.touched)) && phone.invalid ">
+                            <div *ngIf="phone.errors.required" class="error">
+                                Phone Number is required!
+                            </div>
+                            <div *ngIf="phone.invalid && !phone.errors.required" class="error">
+                                Invalid Phone Number!
+                            </div>
+
+                        </div></div>
+                    <div class="form-group " style="padding-left:20px;padding-right:30px;padding-top:10px;padding-bottom:0px "><button type="button " class="btn btn-primary "> Get Started !!</button></div></form>
 
                 </div>
                 <div *ngIf="selectedpane==3" style="padding-top:20px; ">
+                        <form #f="ngForm" (ngSubmit)="validate(f)">
                     <div class="form-group " style="padding-left:20px;padding-right:20px;padding-top:0px;padding-bottom:0px ">Buy VoizFonica Dongle
                         <ul>
 
@@ -96,8 +119,18 @@
                         </ul>
                     </div>
 
-                    <div class="form-group " style="padding-left:20px;padding-right:30px;padding-top:10px;padding-bottom:10px ">MOBILE : +91 <input type="text " /></div>
-                    <div class="form-group " style="padding-left:20px;padding-right:30px;padding-top:10px;padding-bottom:0px "><button type="button " class="btn btn-primary "> Get Started !!</button></div>
+                    <div class="form-group " style="padding-left:20px;padding-right:30px;padding-top:10px;padding-bottom:10px ">MOBILE : +91 <input name="phone" pattern="^[0-9]{10}$" class="form-control" placeholder="Phone number" type="text" style=" display: inline ; width: 200px; margin-right: 25px;" [(ngModel)]="phText" #phone="ngModel" phone required>
+
+                        <div *ngIf="(f.submitted || (phone.dirty || phone.touched)) && phone.invalid ">
+                            <div *ngIf="phone.errors.required" class="error">
+                                Mobile Number is required!
+                            </div>
+                            <div *ngIf="phone.invalid && !phone.errors.required" class="error">
+                                Invalid Mobile Number!
+                            </div>
+
+                        </div></div>
+                    <div class="form-group " style="padding-left:20px;padding-right:30px;padding-top:10px;padding-bottom:0px "><button type="button " class="btn btn-primary "> Get Started !!</button></div></form>
                     <br/>
                 </div>
 

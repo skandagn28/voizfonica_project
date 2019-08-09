@@ -19,6 +19,8 @@ import { FloatingSearchBarComponent } from './subcomponents/floating-search-bar/
 import { SplashComponent } from './splash/splash.component';
 import { PaymentInitiatorComponent } from './payment-initiator/payment-initiator.component';
 import { ChatFloatComponent } from './subcomponents/chat-float/chat-float.component';
+import {GeneralService} from './general.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, DashboardComponent, ViewplansComponent, RechargeComponent, OffersComponent, DevicesComponent, StoreComponent, TransactionsComponent, ChatSupportComponent, LoginComponent, RegisterComponent, FloatingSearchBarComponent, SplashComponent, PaymentInitiatorComponent, ChatFloatComponent],
@@ -26,9 +28,10 @@ import { ChatFloatComponent } from './subcomponents/chat-float/chat-float.compon
     BrowserModule,
     AppRoutingModule,
     AngularFontAwesomeModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [GeneralService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

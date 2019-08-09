@@ -9,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class RegisterComponent implements OnInit {
 
   proof: string;
+  users= {firstname: '',lastname:'',email:'',phonenumber:'',idproof1:'',idproof2:'',idproof3:'',password:'',retypepassword:''};
   constructor() { }
 
   ngOnInit() {
+    
     this.proof= ""
   }
 
@@ -20,6 +22,7 @@ export class RegisterComponent implements OnInit {
   }
 
   validate(f){
+    console.log(this.users)
     if(f.valid){
       console.log('1');
       console.log(f.valid);
