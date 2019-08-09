@@ -38,6 +38,7 @@ import {
   MatDialogModule
 } from "../../node_modules/@angular/material/dialog";
 import { NewconnectionComponent } from "./newconnection/newconnection.component";
+import { TicketsComponent } from "./tickets/tickets.component";
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { NewconnectionComponent } from "./newconnection/newconnection.component"
     DialogDataExampleDialog,
     WalletDataDialog,
     CardDataDialog,
-    NewconnectionComponent
+    NewconnectionComponent,
+    TicketsComponent
   ],
   imports: [
     BrowserModule,

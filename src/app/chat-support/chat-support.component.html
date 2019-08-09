@@ -1,108 +1,76 @@
-<br>
-<br>
-<div id="quick_chatbox" class="container">
-    <div id="select_op_head"><b>RAISE A QUICK TICKET</b></div>
-    <br>
-    <div class="row">
-        <div *ngFor="let row of rows" class="col-md-3">
-            <button id="chat_init" class="btn-primary">
-                            {{row}}
-                        </button>
-        </div>
+<div id="support_box" class="container">
+    <div id="box_head">
+            QUICK SUPPORT
     </div>
-    <br>
-</div>
-<br>
-<div id="chatbox" class="container">
-    <div id="select_op_head"><b>CHAT HISTORY</b></div>
-    <div class="row" *ngFor="let msg of msgs">
-        <div class="col-md-6"></div>
-        <div class="col-md-6">
-            <div id="message_item">
-                {{msg}}
+    <div id="support_history">
+        <br>
+        <div class="row" *ngIf="initial_state===true">
+            <div class="col-md-6"></div>
+            <div class="col-md-6 information">
+               Hi I am Voiza, your assistant for the day. How can I help you?
             </div>
         </div>
+        <div class="row" *ngIf="initial_state===true && option_state===true">
+            <div class="col-md-6"></div>
+            <div class="col-md-6 information">
+                Please select from below options
+            </div>
+        </div>
+        <div *ngIf="initial_state===true">
+            <div class="row"  *ngFor="let x of problems_list">
+                <div class="col-md-8"></div>
+                <div class="col-md-4 option" *ngIf="x.problems==='Initial'" (click)=display(x.solutions,x.problems);set_tic_type(x.solutions);>
+                    {{x.solutions}}
+                </div>
+            </div> 
+        </div>
+        <div  *ngIf="initial_state==false && reason_box==false" >
+            <div class="row" *ngFor="let x of problems_list">
+                <div class="col-md-8"></div>
+                <div class="col-md-4 information" *ngIf="x.type=='info' && x.problems===current_state;let option_state=false">
+                    {{x.solutions}}
+                </div>
+                <div class="col-md-4 option" *ngIf="x.type=='option' && x.problems===current_state;let option_state=true" (click)=display(x.solutions,x.problems)>
+                    {{x.solutions}}
+                </div>
+            </div>
+            <br>
+            <div class="row" *ngIf="new_state==true">
+                    <div class="col-md-10"></div>
+                    <div class="col-md-2 btn-primary" (click)=router_navigate()>
+                        OK
+                    </div>
+                </div><br>
+            <div class="row">
+                <div class="col-md-10"></div>
+                <div class="col-md-2 btn-primary" (click)=auto_display();>
+                    BACK
+                </div>
+            </div>
+        </div>
+        <div class="row" *ngIf="reason_box==true">
+            <div class="col-md-6"></div>
+            <textarea class="col-md-6" [(ngModel)]="raise_info" id="other_text_box" height="250pxpx"></textarea>
+        </div>
+        <div class="row" *ngIf="reason_box==true">
+            <div class="col-md-7"></div>
+            <div class="col-md-2  btn-primary" (click)=auto_display();>
+                BACK
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-2  btn-primary" (click)=raise_ticket()>
+                RAISE TICKET
+            </div> 
+        </div>    
     </div>
-    <br>
-    <form #f="ngForm" (ngSubmit)="save(f)">
-        <div class="row">
-            <div class="col-md-9">
-                <input class="form-control" type="text" name="message_box" id="message_box" [(ngModel)]="message_box">
-            </div>
-            <div class="col-md-3">
-                <br>
-                <button id="sub" class="btn-primary">Send</button>
-            </div>
-        </div>
-    </form>
-    <br>
-    <br>
-</div>
+    </div>
+<br>
+<br>
+<app-tickets></app-tickets>
+<br>
+<br>
 <app-transactions></app-transactions>
 <br>
 <br>
-<div id="ticket_history" class="container">
-    <div id="tickets_heading">
-        TICKETS
-    </div>
-    <br>
-    <table border="1" id="ticket_register" class="center">
-        <tr>
-            <th>
-                S.No.
-            </th>
-            <th>
-                Ticket Id.
-            </th>
-            <th>
-                Date
-            </th>
-            <th>
-                Time
-            </th>
-            <th>
-                State
-            </th>
-            <th>
-                Reason to take action
-            </th>
-            <th>
-                Action on ticket
-            </th>
-        </tr>
-        <tr *ngFor="let ticketdet of ticketdets">
-            <td>
-                {{ticketdet.sno}}
-            </td>
-            <td>
-                {{ticketdet.tid}}
-            </td>
-            <td>
-                {{ticketdet.date}}
-            </td>
-            <td>
-                {{ticketdet.time}}
-            </td>
-            <td>
-                {{ticketdet.state}}
-            </td>
-            <td>
-                <input type="text">
-            </td>
-            <td *ngIf="ticketdet.state=='open'">
-                <button class="btn-primary">
-                    Close ticket
-                </button>
-            </td>
-            <td *ngIf="ticketdet.state=='closed'">
-                <button class="btn-primary">
-                    Open ticket
-                </button>
-            </td>
-        </tr>
-    </table>
-    <br>
-    <br>
-</div>
-<br>
+<app-devices></app-devices>
 <br>

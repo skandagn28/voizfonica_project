@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
+import { Problems, Tickets } from "./interfaces";
 
 @Injectable({
   providedIn: "root"
@@ -39,5 +40,27 @@ export class ApiService {
       "http://127.0.0.1:8000/connection/portin/",
       portin
     );
+  }
+  private baseUrl = "http://localhost:8000/support";
+  httpHeaders = new HttpHeaders({ "content-type": "application/json" });
+  getProblems(): Observable<Problems[]> {
+    return this.http.get<Problems[]>(this.baseUrl + "/problems", {
+      headers: this.httpHeaders
+    });
+  }
+  getTickets(): Observable<Tickets[]> {
+    return this.http.get<Tickets[]>(this.baseUrl + "/ticket", {
+      headers: this.httpHeaders
+    });
+  }
+  openTicket(ticket_details): Observable<Tickets[]> {
+    return this.http.post<Tickets[]>(this.baseUrl + "/ticket", ticket_details, {
+      headers: this.httpHeaders
+    });
+  }
+  reopenTicket(id): Observable<Tickets[]> {
+    return this.http.put<Tickets[]>(this.baseUrl + "/ticket/" + id + "/", {
+      headers: this.httpHeaders
+    });
   }
 }

@@ -12,6 +12,7 @@ import { LoginComponent } from "./login/login.component";
 import { RegisterComponent } from "./register/register.component";
 import { PaymentInitiatorComponent } from "./payment-initiator/payment-initiator.component";
 import { NewconnectionComponent } from "./newconnection/newconnection.component";
+import { TicketsComponent } from "./tickets/tickets.component";
 
 const appRoutes: Routes = [
   {
@@ -78,6 +79,11 @@ const appRoutes: Routes = [
     path: "add",
     component: NewconnectionComponent,
     data: { title: "VoizFonica - Connection" }
+  },
+  {
+    path: "tickets",
+    component: TicketsComponent,
+    data: { title: "VoizFonica - Tickets" }
   }
 ];
 
