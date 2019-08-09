@@ -1,6 +1,7 @@
-import { Component, OnInit, Inject } from "@angular/core";
+import { Component, OnInit, Inject, AfterViewInit } from "@angular/core";
 import { MatDialog, MAT_DIALOG_DATA } from "@angular/material/dialog";
 import { ApiService } from "../api.service";
+import * as $ from "jquery";
 
 export interface DialogData {
   animal: "panda" | "unicorn" | "lion";
@@ -18,7 +19,7 @@ export class DialogDataExampleDialog {
   templateUrl: "./viewplans.component.html",
   styleUrls: ["./viewplans.component.scss"]
 })
-export class ViewplansComponent implements OnInit {
+export class ViewplansComponent implements OnInit, AfterViewInit {
   selectedpane: number;
 
   plans = [];
@@ -31,8 +32,12 @@ export class ViewplansComponent implements OnInit {
       this.plans = data;
     });
   }
+
+  ngAfterViewInit() {}
+
   changepane(pane: number) {
     this.selectedpane = pane;
+    console.log($("#ppl").html());
   }
 
   openDialog(l, r, i) {

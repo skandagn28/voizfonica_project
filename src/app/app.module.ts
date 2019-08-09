@@ -14,7 +14,11 @@ import { RechargeComponent } from "./recharge/recharge.component";
 import { OffersComponent } from "./offers/offers.component";
 import { DevicesComponent } from "./devices/devices.component";
 import { StoreComponent } from "./store/store.component";
-import { TransactionsComponent } from "./transactions/transactions.component";
+import {
+  TransactionsComponent,
+  WalletDataDialog,
+  CardDataDialog
+} from "./transactions/transactions.component";
 import { ChatSupportComponent } from "./chat-support/chat-support.component";
 import { LoginComponent } from "./login/login.component";
 import { RegisterComponent } from "./register/register.component";
@@ -33,6 +37,7 @@ import {
   MatDialogRef,
   MatDialogModule
 } from "../../node_modules/@angular/material/dialog";
+import { NewconnectionComponent } from "./newconnection/newconnection.component";
 
 @NgModule({
   declarations: [
@@ -51,7 +56,10 @@ import {
     SplashComponent,
     PaymentInitiatorComponent,
     ChatFloatComponent,
-    DialogDataExampleDialog
+    DialogDataExampleDialog,
+    WalletDataDialog,
+    CardDataDialog,
+    NewconnectionComponent
   ],
   imports: [
     BrowserModule,
@@ -64,6 +72,6 @@ import {
   ],
   providers: [{ provide: MatDialogRef, useValue: {} }, ApiService],
   bootstrap: [AppComponent],
-  entryComponents: [DialogDataExampleDialog]
+  entryComponents: [DialogDataExampleDialog, WalletDataDialog, CardDataDialog]
 })
 export class AppModule {}

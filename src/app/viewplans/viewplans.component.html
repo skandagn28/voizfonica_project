@@ -26,7 +26,7 @@
 
 <div class="row" *ngIf="selectedpane == 1">
   <div class="col-md-4">
-    <ul class="price">
+    <ul class="price" id="ppl">
       <li class="header">BASIC PLAN</li>
       <li class="grey">Rs. 750 / Month</li>
       <li>
@@ -135,7 +135,7 @@
 </div>
 
 <div class="row" *ngIf="selectedpane == 4">
-  <table class="table">
+  <table class="table" name="id">
     <thead>
       <tr>
         <th>Plan Name</th>
@@ -175,3 +175,5 @@
     </tbody>
   </table>
 </div>
+
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
