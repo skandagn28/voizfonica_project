@@ -1,0 +1,113 @@
+<<<<<<< HEAD
+<div id="main_nav_panel" *ngIf="logged_items==false">
+    <a id="company_logo" href="/">VOIZFONICA</a>
+    <li *ngFor="let menuitem of menuitems_logged_out; let i = index" routerLink="/{{menuitem.path}}" (click)="isSupport(menuitem.name)" (click)="show_support()">
+        {{menuitem.name}}
+    </li>
+</div>     
+<div id="main_nav_panel" *ngIf="logged_items==true">
+    <a id="company_logo" href="/">VOIZFONICA</a>
+    <li *ngFor="let menuitem of menuitems_logged_in; let i = index" routerLink="/{{menuitem.path}}" (click)="show_support()">
+        {{menuitem.name}}
+    </li>
+</div>  
+
+<div id="page_content">
+    <div *ngIf="isHome()">
+        <app-splash></app-splash>
+    </div>
+    <router-outlet></router-outlet>
+</div>
+
+<img id="chat_float" *ngIf="chat_float_hide!=true" routerLink="/support" src="../assets/images/chat.png" width="75px" height="75px" (click)="hide_support()">
+
+<div id="main_footer">
+    &copy; 2019 VoizFonica
+</div>
+
+<!-- <div class="jumbotron" style="padding: 30px; margin: 0px">
+        <div class="col-md-4">
+            <a href="#" style="margin-right:20px">Terms and Conditions</a>
+            <a href="#" style="margin-right:20px">Login</a>
+            <a href="#" style="margin-right:20px">Sitemap</a>
+        </div>
+    </div>
+</div>-->
+=======
+<div class="container-fluid" style="padding: 0px;">
+  <nav class="navbar navbar-default" style="padding: 15px;">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="navbar-header" style="width: 100%;">
+            <a
+              class="navbar-brand"
+              href="/"
+              style="text-align: center; width: 100%; font-size: 20px"
+              ><b>VOIZFONICA</b></a
+            >
+          </div>
+        </div>
+        <div class="col-md-6">
+          <ul class="nav navbar-nav" style="display: inline">
+            <li
+              *ngFor="let menuitem of menuitems; let i = index"
+              [class.active]="selectedmenu == i + 1"
+              (click)="selectMenu(i + 1)"
+            >
+              <a routerLink="/{{ menuitem.path }}">{{ menuitem.name }}</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <button
+            class="btn btn-primary"
+            style="margin: 8px;"
+            routerLink="/login"
+          >
+            Login
+          </button>
+          <button
+            class="btn btn-info"
+            style="margin: 8px;"
+            routerLink="/register"
+          >
+            Sign up
+          </button>
+          <button
+            class="btn btn-success"
+            style="margin: 8px;"
+            routerLink="/add"
+          >
+            + New Connection
+          </button>
+          <span style="margin:8px"> </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<div class="container" style="padding: 25px;">
+  <div *ngIf="ishome()">
+    <app-splash></app-splash>
+  </div>
+  <router-outlet></router-outlet>
+</div>
+
+<div class="jumbotron" style="padding: 30px; margin: 0px">
+  <div class="row">
+    <div class="col-md-8">
+      Copyright &copy; VoizFonica Inc,.
+    </div>
+    <div class="col-md-4">
+      <a href="#" style="margin-right:20px">Terms and Conditions</a>
+      <a href="#" style="margin-right:20px">Login</a>
+      <a href="#" style="margin-right:20px">Sitemap</a>
+    </div>
+  </div>
+</div>
+
+<app-floating-search-bar></app-floating-search-bar>
+<app-chat-float></app-chat-float>
+>>>>>>> d4e6d557542e2c4359cce9970df6cf96d8fccbf4
