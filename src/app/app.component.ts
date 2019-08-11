@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { Router } from '@angular/router';
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-root",
@@ -14,19 +14,18 @@ export class AppComponent {
     { path: "plans", name: "View plans" },
     { path: "recharge", name: "Recharge" },
     { path: "offers", name: "View offers" },
-    { path: "transactions", name: "Transaction history" }
+    { path: "transactions", name: "Transaction history" },
+    { path: "tickets", name: "Support history" }
   ];
 
   constructor(private router: Router) {
     this.selectedmenu = 0;
   }
 
-
-  ishome(){
-    
-  return this.router.url.split("/")[1]=="";
+  ishome() {
+    return this.router.url.split("/")[1] == "";
   }
-  
+
   selectMenu(index: number) {
     console.log(index);
     this.selectedmenu = index;

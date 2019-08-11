@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>Costing</h1>
+<div mat-dialog-content>
+  <table
+    style="border-spacing: 15px;
+  border-collapse: separate; text-align: center"
+  >
+    <tr>
+      <th></th>
+      <th>Local</th>
+      <th>Roaming</th>
+      <th>International</th>
+    </tr>
+    <tr>
+      <th>Call</th>
+      <td>{{ data.l.calls }}</td>
+      <td>{{ data.r.calls }}</td>
+      <td>{{ data.i.calls }}</td>
+    </tr>
+    <tr>
+      <th>SMS</th>
+      <td>{{ data.l.sms }}</td>
+      <td>{{ data.r.sms }}</td>
+      <td>{{ data.i.sms }}</td>
+    </tr>
+    <tr>
+      <th>Data</th>
+      <td>{{ data.l.data }}</td>
+      <td>{{ data.r.data }}</td>
+      <td>{{ data.i.data }}</td>
+    </tr>
+  </table>
+</div>

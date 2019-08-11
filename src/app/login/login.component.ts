@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GeneralService } from '../general.service';
+
 
 @Component({
   selector: 'app-login',
@@ -7,15 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private generalService: GeneralService) { }
 
   ngOnInit() {
+
   }
-  validate(f){
+  
+  validate(f,us,ps){
     if(f.valid){
-      console.log('1');
-      console.log(f.valid);
-      console.log(f);
+
+      this.generalService.login(us.value,ps.value)
+      .subscribe(data=>{console.log(data)});
     }
     else{
       console.log('2');

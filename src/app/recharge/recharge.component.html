@@ -26,12 +26,46 @@
                                 <form #f="ngForm" (ngSubmit)="validate(f)">
                                     <div class="form-group " style="padding-left:20px;padding-right:30px;padding-top:20px;padding-bottom:10px;">
                                         <h2>Choose the best plan that suits you</h2><br/>
-                                        <input type="text " pattern="^[0-9]*$" class="form-control" placeholder="Phone number" minlength=10 maxlength=10 [(ngModel)]="phn" #phn1="ngModel" name="phn" required style=" display: inline ; width: 200px;  margin-right: 25px;" />
-                                        <input type="text " class="form-control" placeholder="Circle" style=" display: inline ; width: 200px; margin-right: 25px;" /><input type="number " class="form-control" placeholder="Amount" style=" display: inline ; width: 200px; margin-right: 25px;"
-                                        /><button type="button " (click)="activate2('4')" class="btn btn-info ">Browse plans</button>
-                                        <div class="error" *ngIf="((f.submitted) || (phn1.touched)) && (!phn1.valid)">
-                                            Enter proper phone number!!! <br><br>
-                                        </div>
+                                        <input name="phone" pattern="^[0-9]{10}$" class="form-control" placeholder="Phone number" type="text"style=" display: inline ; width: 200px; margin-right: 25px;" [(ngModel)]="phText" #phone="ngModel" phone required>
+
+                                                <div *ngIf="(f.submitted || (phone.dirty || phone.touched)) && phone.invalid ">
+                                                    <div *ngIf="phone.errors.required" class="error">
+                                                        Phone Number is required!
+                                                    </div>
+                                                    <div *ngIf="phone.invalid && !phone.errors.required" class="error">
+                                                        Invalid Phone Number!
+                                                    </div>
+                        
+                                                </div>
+
+                                                <input name="circle" pattern="^[a-zA-Z]$" class="form-control" placeholder="Circle" type="text" style=" display: inline ; width: 200px; margin-right: 25px;" [(ngModel)]="circleText" #circle="ngModel" circle required>
+
+                                                <div *ngIf="(f.submitted || (circle.dirty || circle.touched)) && circle.invalid ">
+                                                    <div *ngIf="circle.errors.required" class="error">
+                                                        Circle is required!
+                                                    </div>
+                                                    <div *ngIf="circle.invalid && !circle.errors.required" class="error">
+                                                        Invalid Circle!
+                                                    </div>
+                        
+                                                </div>
+                                        
+                                        
+                                                <input name="amount" pattern="^[0-9]$" class="form-control" placeholder="Amount" type="text" style=" display: inline ; width: 200px; margin-right: 25px;" [(ngModel)]="amountText" #amount="ngModel" circle required>
+
+                                                <div *ngIf="(f.submitted || (amount.dirty || amount.touched)) && amount.invalid ">
+                                                    <div *ngIf="amount.errors.required" class="error">
+                                                        Amount is required!
+                                                    </div>
+                                                    <div *ngIf="amount.invalid && !amount.errors.required" class="error">
+                                                        Invalid Amount!
+                                                    </div>
+                        
+                                                </div>
+                                        
+                                        <button type="button " (click)="activate2('4')" class="btn btn-info ">Browse plans</button>
+
+                                        
                                     </div>
                                 </form>
 
@@ -42,18 +76,56 @@
                             </div>
                             <!---->
                             <div *ngIf="value_tab=='2'" id="tab2default " style="padding-top:20px; ">
+                                <form #f="ngForm" (ngSubmit)="validate(f)">
 
                                 <div class="form-group " style="padding-left:20px;padding-right:30px;padding-top:20px;padding-bottom:10px;">
                                     <h2>Choose pack based on your usage</h2><br/>
-                                    <input type="text " class="form-control" placeholder="Phone number" style=" display: inline ; width: 200px;  margin-right: 25px;" />
-                                    <input type="text " class="form-control" placeholder="Circle" style=" display: inline ; width: 200px; margin-right: 25px;" /><input type="number " class="form-control" placeholder="Amount" style=" display: inline ; width: 200px; margin-right: 25px;"
-                                    /><button type="button " (click)="activate3('4')" class="btn btn-info ">Browse plans</button>
+                                    <input name="phone" pattern="^[0-9]{10}$" class="form-control" placeholder="Phone number" type="text" style=" display: inline ; width: 200px; margin-right: 25px;" [(ngModel)]="phText" #phone="ngModel" phone required>
+
+                                                <div *ngIf="(f.submitted || (phone.dirty || phone.touched)) && phone.invalid ">
+                                                    <div *ngIf="phone.errors.required" class="error">
+                                                        Phone Number is required!
+                                                    </div>
+                                                    <div *ngIf="phone.invalid && !phone.errors.required" class="error">
+                                                        Invalid Phone Number!
+                                                    </div>
+                        
+                                                </div>
+
+
+                                    
+                                    <input name="circle" pattern="^[a-zA-Z]$" class="form-control" placeholder="Circle" type="text" style=" display: inline ; width: 200px; margin-right: 25px;" [(ngModel)]="circleText" #circle="ngModel" circle required>
+
+                                    <div *ngIf="(f.submitted || (circle.dirty || circle.touched)) && circle.invalid ">
+                                        <div *ngIf="circle.errors.required" class="error">
+                                            Circle is required!
+                                        </div>
+                                        <div *ngIf="circle.invalid && !circle.errors.required" class="error">
+                                            Invalid Circle!
+                                        </div>
+            
+                                    </div>
+
+                                    
+                                    <input name="amount" pattern="^[0-9]$" class="form-control" placeholder="Amount" type="text" style=" display: inline ; width: 200px; margin-right: 25px;" [(ngModel)]="amountText" #amount="ngModel" amount required>
+
+                                    <div *ngIf="(f.submitted || (amount.dirty || amount.touched)) && amount.invalid ">
+                                        <div *ngIf="amount.errors.required" class="error">
+                                            Amount is required!
+                                        </div>
+                                        <div *ngIf="amount.invalid && !amount.errors.required" class="error">
+                                            Invalid Amount!
+                                        </div>
+            
+                                    </div>
+                                    
+                                    <button type="button " (click)="activate3('4')" class="btn btn-info ">Browse plans</button>
 
                                 </div>
 
 
 
-                                <div class="form-group" style="padding-left:20px;padding-right:30px;padding-top:10px;padding-bottom:0px "><button type="button " class="btn btn-primary ">Proceed to recharge</button></div>
+                                <div class="form-group" style="padding-left:20px;padding-right:30px;padding-top:10px;padding-bottom:0px "><button type="button " class="btn btn-primary ">Proceed to recharge</button></div></form>
                                 <br>
                                 <div *ngIf="value_tab3=='4'">
                                     <app-viewplans></app-viewplans>
@@ -61,10 +133,11 @@
                             </div>
                             <!---->
                             <div *ngIf="value_tab=='3'" id="tab3default " style="padding-top:20px; ">
+                                    <form #f="ngForm" (ngSubmit)="validate(f)" id="contact-form" method="post" action="contact.php" role="form">
                                 <table>
                                     <tr>
-                                        <th>
-                                            <div class="form-group " style="padding-left:20px;padding-right:20px;padding-top:0px;padding-bottom:0px ">Switch to VoizFonica</div>
+                                        <th align="center">
+                                            <div class="form-group " style="padding-left:20px;padding-right:20px;padding-top:0px;padding-bottom:0px "><h2>Switch to VoizFonica !!</h2></div>
                                         </th>
                                     </tr>
                                     <tr>
@@ -72,7 +145,17 @@
                                             <div class="form-group " style="padding-left:20px;padding-right:30px;padding-top:20px;padding-bottom:10px ">MOBILE : +91 </div>
                                         </td>
                                         <th>
-                                            <div class="form-group " style="padding-left:20px;padding-right:30px;padding-top:20px;padding-bottom:10px "><input type="text "></div>
+                                            <div class="form-group " style="padding-left:20px;padding-right:30px;padding-top:20px;padding-bottom:10px "><input name="phone" pattern="^[0-9]{10}$" class="form-control" placeholder="Phone number" type="text" style=" display: inline ; width: 200px; margin-right: 25px;" [(ngModel)]="phText" #phone="ngModel" phone required>
+
+                                                <div *ngIf="(f.submitted || (phone.dirty || phone.touched)) && phone.invalid ">
+                                                    <div *ngIf="phone.errors.required" class="error">
+                                                        Phone Number is required!
+                                                    </div>
+                                                    <div *ngIf="phone.invalid && !phone.errors.required" class="error">
+                                                        Invalid Phone Number!
+                                                    </div>
+                        
+                                                </div></div>
                                         </th>
                                     </tr>
                                     <tr>
@@ -81,7 +164,7 @@
                                             <div class="form-group" style="padding-left:20px;padding-right:30px;padding-top:10px;padding-bottom:0px "><button type="button " class="btn btn-primary ">Proceed to recharge</button></div>
                                         </td>
                                     </tr>
-                                </table>
+                                </table></form>
                             </div>
                         </div>
                     </div>
