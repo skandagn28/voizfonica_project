@@ -92,6 +92,19 @@
                                     Please enter the valid email ID
                                 </div>
                             </div>
+
+                            <p style="margin: 10px; margin-bottom: 0px">Profile pic:</p>
+                            <input type="file" (change)="fileChange($event)" placeholder="Upload file" accept=".png,.jpg">
+
+    
+                            <div *ngIf="(f.submitted || (email.dirty || email.touched)) && email.invalid ">
+                                <div *ngIf="email.errors.required" class="error">
+                                    Email is required!
+                                </div>
+                                <div *ngIf="email.errors.email && !email.errors.required" class="error">
+                                    Please enter the valid email ID
+                                </div>
+                            </div>
     
     
                             <select class="form-control" style="width: 150px;max-height: 80px;">
@@ -101,7 +114,7 @@
                                             <option value="3">+701</option>
                                         </select>
     
-                            <input name="phone" pattern="^[0-9]{10}$" class="form-control" placeholder="users.phonenumber" type="text" style="max-width: 200px;" [(ngModel)]="phText" #phone="ngModel" phone required>
+                            <input name="phone" pattern="^[0-9]{10}$" class="form-control" placeholder="" type="text" style="max-width: 200px;" [(ngModel)]="users.phonenumber" #phone="ngModel" phone required>
     
                             <div *ngIf="(f.submitted || (phone.dirty || phone.touched)) && phone.invalid ">
                                 <div *ngIf="phone.errors.required" class="error">

@@ -1,108 +1,155 @@
 <div class="jumbotron" style="padding: 20px">
+  <div class="row">
+    <div class="col-md-3 ">
+      <div
+        class="card"
+        style="width: 18rem;background-color: white; border-radius: 20px; text-align: center; box-shadow: black 2px 2px 5px; padding: 10px; width: 100%"
+      >
+        <img
+          class="card-img-top"
+          src="assets/user.png"
+          style="width: 150px; height: 150px;"
+          alt="Card image cap"
+        />
 
-    <div class="row">
-        <div class="col-md-3 ">
-            <div class="card" style="width: 18rem;background-color: white; border-radius: 20px; text-align: center; box-shadow: black 2px 2px 5px; padding: 10px; width: 100%">
-
-                <img class="card-img-top" src="assets/user.png" style="width: 150px; height: 150px;" alt="Card image cap">
-
-                <div class="card-body" >
-                    <h5 class="card-title"  ><i>{{dashboardlist.str1}}</i></h5>
-                    <hr/>
-                    <div class="card-text" >
-                        <p style="font-size: 15px"> <b>{{dashboardlist.user_name}}</b> </p>
-                        <p style="font-size: 15px">{{dashboardlist.no}} </p>
-                        <p style="font-size: 15px">
-                            <fa name="map-marker"></fa> {{dashboardlist.loc}}
-                        </p>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6" style="text-align: center">
-                            <a href="#" class="btn btn-primary"> {{dashboardlist.name1}}</a>
-                        </div>
-                        <div class="col-md-6" style="text-align: center">
-                            <a href="#" class="btn btn-primary"> {{dashboardlist.name2}}</a>
-                        </div>
-                        <br>
-                    </div>
-                    <div class ="row">
-                        <div class="col-md-12" style="text-align: center">
-                            <a href="#" class="btn btn-info">{{dashboardlist.name3}}</a>
-                        </div>
-                    </div>
-                </div>
+        <div class="card-body">
+          <h5 class="card-title"><i>Customer since 2015</i></h5>
+          <hr />
+          <div class="card-text">
+            <p style="font-size: 15px"><b>USER FULL NAME</b></p>
+            <p style="font-size: 15px">-- 9999999999 --</p>
+            <p style="font-size: 15px"><fa name="map-marker"></fa> Chennai</p>
+          </div>
+          <div class="row">
+            <div class="col-md-6" style="text-align: center">
+              <a href="#" class="btn btn-primary">Recharge</a>
             </div>
-        </div>
-        <div class="col-md-9">
-            <div class="col-md-3 card" style="width: 100%; background-color: white; border-radius: 5px; text-align: center; box-shadow: black 2px 2px 5px; padding: 20px; padding: 8px;text-align: center">
-                <div class="row" style="margin-left: 15px; padding-bottom: 25px">
-                    <div class="col-md-3">
-                        <div class="row">
-                            <div class="col-md-3 card" style="width: 20rem; background-color: white; border-radius: 5px; text-align: center; box-shadow: black 2px 2px 5px; margin: 8px; padding: 8px;text-align: center">
-                                <b>{{dashboardlist.plan1}}</b>
-                                <br/>
-
-                                <h2>{{dashboardlist.plan2}}</h2>
-                                {{dashboardlist.plan3}} <br/><br/>
-
-                            </div>
-                            <div class="col-md-3 card" style="width: 20rem; background-color: white; border-radius: 5px; text-align: center; box-shadow: black 2px 2px 5px; margin: 8px; padding: 8px;text-align: center"><b>{{dashboardlist.data1}}</b>
-                                <br/> <br/>{{dashboardlist.data2}}<br/>
-                                <div class="progress" style="margin-top: 10px;">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">70%</div>
-                                </div>
-                                <button class="btn btn-default">{{dashboardlist.data3}}</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-1"></div>
-                    <div class="col-md-7 card" style="background-color: white; border-radius: 5px; text-align: center; box-shadow: black 2px 2px 5px; margin: 8px; padding: 8px;text-align: center">
-                        <h4><b>{{dashboardlist.dashboardname}}</b> </h4>
-                        <br/>
-                        <div style="text-align: left; padding: 20px">
-                            <b>Name: </b> {{dashboardlist.dashboardemail}} <br/><br/>
-                            <b>Email-ID </b> {{dashboardlist.name2}}<br/><br/>
-                            <b>Primary mobile number </b> {{dashboardlist.dashboardprimno}}<br/><br/>
-                            <b>Last transaction: </b> {{dashboardlist.dashboardlasttrans}}<br/><br/>
-                        </div>
-                        <button class="btn btn-primary">{{dashboardlist.passwordname}}</button><br/>
-                    </div>
-
-                </div>
+            <div class="col-md-6" style="text-align: center">
+              <a href="#" class="btn btn-info">Support</a>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-
+    <div class="col-md-9">
+      <div
+        class="col-md-3 card"
+        style="width: 100%; background-color: white; border-radius: 5px; text-align: center; box-shadow: black 2px 2px 5px; padding: 20px; padding: 8px;text-align: center"
+      >
+        <div class="row" style="margin-left: 15px; padding-bottom: 25px">
+          <div class="col-md-3">
+            <div class="row">
+              <div
+                class="col-md-3 card"
+                style="width: 20rem; background-color: white; border-radius: 5px; text-align: center; box-shadow: black 2px 2px 5px; margin: 8px; padding: 8px;text-align: center"
+              >
+                <b>Saved cards</b>
+                <br /><br />
+                <table class="table">
+                  <tr>
+                    <td>VISA Ending 0575</td>
+                    <td>x&nbsp;&nbsp;</td>
+                  </tr>
+                </table>
+              </div>
+              <p></p>
+              <hr />
+              <p></p>
+              <div
+                class="col-md-3 card"
+                style="width: 20rem; background-color: white; border-radius: 5px; text-align: center; box-shadow: black 2px 2px 5px; margin: 8px; padding: 8px;text-align: center"
+              >
+                <b>Saved wallets</b>
+                <br /><br />
+                <table class="table">
+                  <tr>
+                    <td>Phonepe</td>
+                    <td>x&nbsp;&nbsp;</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-1"></div>
+          <div
+            class="col-md-7 card"
+            style="background-color: white; border-radius: 5px; text-align: center; box-shadow: black 2px 2px 5px; margin: 8px; padding: 8px;text-align: center"
+          >
+            <h4><b>Dashboard</b></h4>
+            <br />
+            <div style="text-align: left; padding: 20px">
+              <b>Name: </b> XXXXX <br /><br />
+              <b>Email-ID </b> xxxx@yyy.com<br /><br />
+              <b>Primary mobile number </b> 9876543210<br /><br />
+              <b>Last transaction: </b> 15-Jun-19<br /><br />
+            </div>
+            <button class="btn btn-primary">Change password</button><br />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="jumbotron" style="padding: 20px; text-align: center">
-    <h3>
-        My accounts
-    </h3><br/>
-    <div class="row">
+  <h3>
+    My accounts
+  </h3>
+  <br />
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+        <div
+          class="col-md-3 card"
+          *ngFor="let item of listofaccounts"
+          style="width: 24rem; background-color: white; border-radius: 5px; text-align: center; box-shadow: black 2px 2px 5px; margin: 8px; padding: 8px;text-align: center"
+        >
+          <b style="font-size: 15px"
+            ><fa name="{{ item.accounticon }}"></fa> {{ item.accounttype }}</b
+          >
+          <hr />
+          <b>Account number:</b> {{ item.accountnumber }} <br />
+          <b>Division:</b> {{ item.division }} <br />
+          <hr />
+          <b>Main account balance:</b> 300<br />
 
-        <div class="col-md-12">
-            <div class="row">
-                <div class="col-md-3 card" *ngFor="let item of listofaccounts" style="width: 24rem; background-color: white; border-radius: 5px; text-align: center; box-shadow: black 2px 2px 5px; margin: 8px; padding: 8px;text-align: center">
-                    <b style="font-size: 15px"><fa name="{{item.accounticon}}"></fa> {{item.accounttype}}</b>
-                    <hr/> <b>Account number:</b> {{item.accountnumber}} <br/>
-                    <b>Division:</b> {{item.division}} <br/>
-                    <h3>
-                        ₹ {{item.dueamount}}</h3>
-                    <div [ngSwitch]="item.accounttype">
-                        <div *ngSwitchCase="'Prepaid Mobile'">
-                            <button class="btn btn-success">Recharge now</button>
-                        </div>
-                        <div *ngSwitchDefault>
-                            <button class="btn btn-success">Pay now</button>
-                        </div>
-                    </div>
+          <b>Validity:</b> 30-Aug-29 <br /><br />
 
-                </div>
+          <div>
+            <div
+              class="col-md-3 card"
+              style="width: 20rem; background-color: white; border-radius: 5px; text-align: center; box-shadow: black 2px 2px 5px; margin: 8px; padding: 8px;text-align: center; margin-bottom: 20px"
+            >
+              <b>Current plan</b>
+              <br />
+
+              <h2>399 plan</h2>
+              Expires on 02-Jul-2019 <br /><br />
+
+              <button
+                class="btn btn-default"
+                (click)="
+                  openDialog({})
+                "
+              >
+                Check usage
+              </button>
             </div>
-        </div>
-    </div>
+          </div>
 
+          <hr />
+          <div [ngSwitch]="item.accounttype">
+            <div *ngSwitchCase="'Prepaid Mobile'">
+              <button class="btn btn-success">Recharge now</button>
+            </div>
+            <div *ngSwitchDefault>
+              <button class="btn btn-success">Pay now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <router-outlet></router-outlet>

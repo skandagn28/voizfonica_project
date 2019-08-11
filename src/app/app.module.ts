@@ -6,7 +6,10 @@ import { AppComponent } from "./app.component";
 import { AngularFontAwesomeModule } from "angular-font-awesome";
 import { FormsModule } from "@angular/forms";
 
-import { DashboardComponent } from "./dashboard/dashboard.component";
+import {
+  DashboardComponent,
+  CheckUsageDataDialog
+} from "./dashboard/dashboard.component";
 import {
   ViewplansComponent,
   DialogDataExampleDialog
@@ -41,7 +44,6 @@ import {
 import { NewconnectionComponent } from "./newconnection/newconnection.component";
 import { TicketsComponent } from "./tickets/tickets.component";
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +65,8 @@ import { TicketsComponent } from "./tickets/tickets.component";
     WalletDataDialog,
     CardDataDialog,
     NewconnectionComponent,
-    TicketsComponent
+    TicketsComponent,
+    CheckUsageDataDialog
   ],
   imports: [
     BrowserModule,
@@ -76,6 +79,11 @@ import { TicketsComponent } from "./tickets/tickets.component";
   ],
   providers: [{ provide: MatDialogRef, useValue: {} }, ApiService],
   bootstrap: [AppComponent],
-  entryComponents: [DialogDataExampleDialog, WalletDataDialog, CardDataDialog]
+  entryComponents: [
+    DialogDataExampleDialog,
+    WalletDataDialog,
+    CardDataDialog,
+    CheckUsageDataDialog
+  ]
 })
 export class AppModule {}
