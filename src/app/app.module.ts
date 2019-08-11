@@ -5,6 +5,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { AngularFontAwesomeModule } from "angular-font-awesome";
 import { FormsModule } from "@angular/forms";
+
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import {
   ViewplansComponent,
@@ -39,6 +40,7 @@ import {
 } from "../../node_modules/@angular/material/dialog";
 import { NewconnectionComponent } from "./newconnection/newconnection.component";
 import { TicketsComponent } from "./tickets/tickets.component";
+
 
 @NgModule({
   declarations: [

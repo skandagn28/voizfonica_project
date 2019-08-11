@@ -27,7 +27,7 @@ export class RegisterComponent implements OnInit {
   }
 
   proofChange(p) {
-    this.proof = p.target.value;
+    this.proof = p.target.value
   }
 
   validate(f, users) {
