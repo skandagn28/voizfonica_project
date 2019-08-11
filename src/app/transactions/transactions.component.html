@@ -1,98 +1,70 @@
-<br />
-<br />
-<div id="transactionhistory" class="container">
-  <div id="transactions_heading">
-    TRANSACTION
-  </div>
-  <br />
-  <table border="1" id="transaction_register" class="center">
-    <tr>
-      <th>
-        Transaction Id.
-      </th>
-      <th>
-        Amount
-      </th>
-      <th>
-        Date and Time
-      </th>
-
-      <th>
-        State
-      </th>
-      <th>
-        Wallet_linked
-      </th>
-      <th>
-        Card_linked
-      </th>
-      <th>
-        Invoice
-      </th>
-      <th>
-        Raise ticket
-      </th>
-    </tr>
-    <tr *ngFor="let i of trans_array">
-      <td>
-        {{ i._id }}
-      </td>
-      <td>
-        {{ i.transaction_amount }}
-      </td>
-      <td>
-        {{ i.transaction_date_time }}
-      </td>
-
-      <td>
-        {{ i.transaction_state }}
-      </td>
-      <td style="text-align: center">
-        <button
-          class="btn-primary"
-          (click)="
-            openWalletDialog(
-              i.wallet_linked.wallet_name,
-              i.wallet_linked.wallet_auth_id,
-              i.wallet_linked.wallet_processing_charges
-            )
-          "
-        >
-          View wallet linked
-        </button>
-      </td>
-      <td style="text-align: center">
-        <button
-          class="btn-primary"
-          (click)="
-            openCardDialog(
-              i.card_linked.card_holder_name,
-              i.card_linked.card_type,
-              i.card_linked.card_number,
-              i.card_linked.cvv,
-              i.card_linked.card_bank
-            )
-          "
-        >
-          View cards linked
-        </button>
-      </td>
-      <td>
-        <button class="btn-primary">
-          Download Invoice
-        </button>
-      </td>
-      <td>
-        <button class="btn-primary">
-          Raise Ticket
-        </button>
-      </td>
-    </tr>
-  </table>
-
-  <br />
-  <br />
+<br>
+<br>
+<div id="transaction_history" class="container">
+    <div id="transactions_heading">
+        TRANSACTIONS
+    </div>
+    <br>
+    <table border="1" id="transaction_register" class="center">
+        <tr>
+            <th>
+                S.No.
+            </th>
+            <th>
+                Transaction Id.
+            </th>
+            <th>
+                Amount
+            </th>
+            <th>
+                Date
+            </th>
+            <th>
+                Time
+            </th>
+            <th>
+                State
+            </th>
+            <th>
+                Invoice
+            </th>
+            <th>
+                Raise ticket
+            </th>
+        </tr>
+        <tr *ngFor="let row of rowvalues">
+            <td>
+                {{row.sno}}
+            </td>
+            <td>
+                {{row.tid}}
+            </td>
+            <td>
+                {{row.amt}}
+            </td>
+            <td>
+                {{row.date}}
+            </td>
+            <td>
+                {{row.time}}
+            </td>
+            <td>
+                {{row.state}}
+            </td>
+            <td>
+                <button class="btn-primary">
+                Download Invoice
+            </button>
+            </td>
+            <td>
+                <button class="btn-primary">
+                Raise Ticket
+            </button>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <br>
 </div>
-
-<br />
-<br />
+<br>
+<br>

@@ -1,77 +1,14 @@
-import { Component, Inject, OnInit } from "@angular/core";
-
-import { ApiService } from "../api.service";
-import { MatDialog, MAT_DIALOG_DATA } from "@angular/material/dialog";
-
-export interface WalletData {
-  animal: "panda" | "unicorn" | "lion";
-}
-@Component({
-  selector: "wallet-data-example",
-  templateUrl: "view_wallet.html"
-})
-export class WalletDataDialog {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: WalletData) {}
-}
-
-export interface CardData {
-  animal: "panda" | "unicorn" | "lion";
-}
-@Component({
-  selector: "card-data-example",
-  templateUrl: "view_card.html",
-  styleUrls: ["./card.css"]
-})
-export class CardDataDialog {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: CardData) {}
-}
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: "app-transactions",
-  templateUrl: "./transactions.component.html",
-  styleUrls: ["./transactions.component.scss"]
+  selector: 'app-transactions',
+  templateUrl: './transactions.component.html',
+  styleUrls: ['./transactions.component.scss']
 })
 export class TransactionsComponent implements OnInit {
-  transactions_list: Object[] = [
-    {
-      id: "",
-      transaction_amount: "",
-      transaction_date_time: "",
-      transaction_state: "",
-      for_account: ""
-    }
-  ];
-
-  trans_array = [];
-  constructor(public dialog: MatDialog, public apiService: ApiService) {}
+  rowvalues=[{sno:'1',tid:'2879548',amt:'256.86',date:'28/01/2018',time:'08:26:00',state:'Success'},{sno:'1',tid:'2879548',amt:'256.86',date:'28/01/2018',time:'08:26:00',state:'Success'},{sno:'1',tid:'2879548',amt:'256.86',date:'28/01/2018',time:'08:26:00',state:'Success'},{sno:'1',tid:'2879548',amt:'256.86',date:'28/01/2018',time:'08:26:00',state:'Success'},{sno:'1',tid:'2879548',amt:'256.86',date:'28/01/2018',time:'08:26:00',state:'Success'},{sno:'1',tid:'2879548',amt:'256.86',date:'28/01/2018',time:'08:26:00',state:'Success'},{sno:'1',tid:'2879548',amt:'256.86',date:'28/01/2018',time:'08:26:00',state:'Success'},{sno:'1',tid:'2879548',amt:'256.86',date:'28/01/2018',time:'08:26:00',state:'Success'}];
+  constructor() { }
 
   ngOnInit() {
-    this.apiService.getTransactions().subscribe(data => {
-      this.trans_array = data;
-    });
-  }
-
-  openWalletDialog(n, a, p) {
-    this.dialog.open(WalletDataDialog, {
-      width: "350px",
-      data: {
-        n: n,
-        a: a,
-        p: p
-      }
-    });
-  }
-
-  openCardDialog(name, type, number, cvv, bank) {
-    this.dialog.open(CardDataDialog, {
-      width: "350px",
-      data: {
-        name: name,
-        type: type,
-        number: number,
-        cvv: cvv,
-        bank: bank
-      }
-    });
   }
 }

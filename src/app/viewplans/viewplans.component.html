@@ -1,179 +1,116 @@
 <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-3"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+            </div>
 
-      <div class="col-md-6">
-        <ul class="nav navbar-nav" style="display: inline;text-align:center">
-          <li class.active="selectedpane==1">
-            <a href="javascript:;" (click)="changepane(1)">Recommended Plans</a>
-          </li>
-          <li class.active="selectedpane==2">
-            <a href="javscript:;" (click)="changepane(2)">Prepaid</a>
-          </li>
-          <li class.active="selectedpane==2">
-            <a href="javscript:;" (click)="changepane(3)">Postpaid</a>
-          </li>
-          <li class.active="selectedpane==2">
-            <a href="javscript:;" (click)="changepane(4)">Dongle</a>
-          </li>
-        </ul>
-      </div>
-      <div class="col-md-3"></div>
+            <div class="col-md-4">
+
+                <ul class="nav navbar-nav" style="display: inline;text-align:center">
+                    <li class.active="selectedpane==1"><a href="javascript:;" (click)="changepane(1)">Recommended Plans</a></li>
+                    <li class.active="selectedpane==2"><a href="javscript:;" (click)="changepane(2)">All plans</a></li>
+
+
+                </ul>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+
     </div>
-  </div>
+
 </nav>
 
-<div class="row" *ngIf="selectedpane == 1">
-  <div class="col-md-4">
-    <ul class="price" id="ppl">
-      <li class="header">BASIC PLAN</li>
-      <li class="grey">Rs. 750 / Month</li>
-      <li>
-        <img src="assets/100mbps.png" style="height:150px; width:150px" />
-      </li>
-      <li>100 Mbps Speed</li>
+<div class="row" *ngIf="selectedpane==1">
+    <div class="col-md-4">
+        <ul class="price">
+            <li class="header">BASIC PLAN</li>
+            <li class="grey">Rs. 750 / Month</li>
+            <li><img src="assets/100mbps.png" style="height:150px; width:150px"></li>
+            <li>100 Mbps Speed</li>
 
-      <li class="grey"><a href="#" class="button">Choose</a></li>
-    </ul>
-  </div>
+            <li class="grey"><a href="#" class="button">Choose</a></li>
+        </ul>
+    </div>
+
+
+    <div class="col-md-4">
+        <ul class="price">
+            <li class="header">MEGA PLAN</li>
+            <li class="grey">Rs. 1000 / Month</li>
+            <li><img src="assets/250mbps.png" style="height:150px; width:150px"></li>
+            <li>250 Mbps Speed</li>
+
+            <li class="grey"><a href="#" class="button">Choose</a></li>
+        </ul>
+    </div>
+
+    <div class="col-md-4">
+
+        <ul class="price">
+            <li class="header">SUPREME PLAN</li>
+            <li class="grey">Rs. 2000 / Month</li>
+            <li><img src="assets/1000mbps.png" style="height:150px; width:150px"></li>
+            <li>1000 Mbps Speed</li>
+
+            <li class="grey"><a href="#" class="button">Choose</a></li>
+        </ul>
+    </div>
 </div>
 
-<div class="row" *ngIf="selectedpane == 2">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Plan Name</th>
-        <th>Plan price</th>
-        <th>Plan description</th>
-        <th>Topup balance</th>
-        <th>Calls</th>
-        <th>Data</th>
-        <th>SMS</th>
-        <th>Validity</th>
-        <th>Call costing</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <ng-container *ngFor="let plan of plans">
-        <tr *ngIf="plan.plan_type == 'prepaid'">
-          <td>{{ plan.plans_name }}</td>
-          <td>
-            <a
-              href="javascript:;"
-              data-toggle="tooltip"
-              title="Incl. Processing: {{
-                plan.costtocompany.processing
-              }} and GST: {{ plan.costtocompany.gst }}"
-              >{{ plan.plans_price }}</a
-            >
-          </td>
-          <td>{{ plan.plan_description }}</td>
-          <td>{{ plan.topup_delivered }}</td>
-          <td>{{ plan.value_delivered.calls }}</td>
-          <td>{{ plan.value_delivered.data }}</td>
-          <td>{{ plan.value_delivered.sms }}</td>
-          <td>{{ plan.validity.prepaid_validity }}</td>
-          <td>
-            <a
-              href="javascript:;"
-              (click)="openDialog(plan.local, plan.roaming, plan.international)"
-              >View Costing</a
-            >
-          </td>
-        </tr>
-      </ng-container>
-    </tbody>
-  </table>
-</div>
+<div class="row" *ngIf="selectedpane==2">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Plan Name</th>
+                <th>Intenet Speed</th>
+                <th>Broadband Data</th>
+                <th>Monthly Payment</th>
+                <th>Choose</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="info">
+                <td>Mini Plan</td>
+                <td>30 Mbps</td>
+                <td>120 GB</td>
+                <td>500 Mbps</td>
+                <td>Rs. 650</td>
+                <td><button class="button">Choose</button></td>
+            </tr>
+            <tr class="info">
+                <td>Basic Plan</td>
+                <td>100 Mbps</td>
+                <td>1000 GB</td>
+                <td>1 Gbps</td>
+                <td>Rs. 750</td>
+                <td><button class="button">Choose</button></td>
+            </tr>
+            <tr class="info">
+                <td>Economy Plan</td>
+                <td>150 Mbps</td>
+                <td>1500 GB</td>
+                <td>1 Gbps</td>
+                <td>Rs. 900</td>
+                <td><button class="button">Choose</button></td>
+            </tr>
+            <tr class="active">
+                <td>Mega Plan</td>
+                <td>250 Mbps</td>
+                <td>2000 GB</td>
+                <td>2 Gbps</td>
+                <td>Rs. 1000</td>
+                <td><button class="button">Choose</button></td>
+            </tr>
+            <tr class="info">
+                <td>High Speed Plan</td>
+                <td>1 Gbps</td>
+                <td>3000 GB</td>
+                <td>2 Gbps</td>
+                <td>Rs. 1700</td>
+                <td><button class="button">Choose</button></td>
+            </tr>
 
-<div class="row" *ngIf="selectedpane == 3">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Plan Name</th>
-        <th>Plan price</th>
-        <th>Plan description</th>
-        <th>Plan duration</th>
-        <th>Free Calls</th>
-        <th>Free Data</th>
-        <th>Free SMS</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <ng-container *ngFor="let plan of plans">
-        <tr *ngIf="plan.plan_type == 'postpaid'">
-          <td>{{ plan.plans_name }}</td>
-          <td>
-            <a
-              href="javascript:;"
-              data-toggle="tooltip"
-              title="Incl. Processing: {{
-                plan.costtocompany.processing
-              }} and GST: {{ plan.costtocompany.gst }}"
-              >{{ plan.plans_price }}</a
-            >
-          </td>
-          <td>{{ plan.plan_description }}</td>
-          <td>{{ plan.validity.postpaid_duration }}</td>
-          <td>{{ plan.value_delivered.calls }}</td>
-          <td>{{ plan.value_delivered.data }}</td>
-          <td>{{ plan.value_delivered.sms }}</td>
-          <td>
-            <a
-              href="javascript:;"
-              (click)="openDialog(plan.local, plan.roaming, plan.international)"
-              >Costing after free units</a
-            >
-          </td>
-        </tr>
-      </ng-container>
-    </tbody>
-  </table>
+        </tbody>
+    </table>
 </div>
-
-<div class="row" *ngIf="selectedpane == 4">
-  <table class="table" name="id">
-    <thead>
-      <tr>
-        <th>Plan Name</th>
-        <th>Plan price</th>
-        <th>Plan description</th>
-        <th>Plan duration</th>
-        <th>Bundled data</th>
-        <th>Data FUP</th>
-      </tr>
-    </thead>
-    <tbody>
-      <ng-container *ngFor="let plan of plans">
-        <tr *ngIf="plan.plan_type == 'dongle'">
-          <td>{{ plan.plans_name }}</td>
-          <td>
-            <a
-              href="javascript:;"
-              data-toggle="tooltip"
-              title="Incl. Processing: {{
-                plan.costtocompany.processing
-              }} and GST: {{ plan.costtocompany.gst }}"
-              >{{ plan.plans_price }}</a
-            >
-          </td>
-          <td>{{ plan.plan_description }}</td>
-          <td>{{ plan.validity.postpaid_duration }}</td>
-          <td>{{ plan.value_delivered.data }}</td>
-          <td>
-            <a
-              href="javascript:;"
-              (click)="openDialog(plan.local, plan.roaming, plan.international)"
-              >Costing after FUP reached</a
-            >
-          </td>
-        </tr>
-      </ng-container>
-    </tbody>
-  </table>
-</div>
-
-<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>

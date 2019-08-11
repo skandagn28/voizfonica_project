@@ -1,72 +1,93 @@
-<div id="myCarousel" class="carousel slide" data-ride="carousel" style="box-shadow: black 7px 7px 9px">
+<div id="myCarousel" class="carousel slide" data-ride="carousel" style="box-shadow: black 2px 2px 5px">
     <!-- Indicators -->
-    <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2" class="active"></li>
+    <ol class="carousel-indicators ">
+        <li data-target="#myCarousel " data-slide-to="0 "></li>
+        <li data-target="#myCarousel " data-slide-to="1 "></li>
+        <li data-target="#myCarousel " data-slide-to="2 " class="active "></li>
     </ol>
 
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
+    <div class="carousel-inner ">
+
+        <div class="item active ">
+            <img src="assets/offer.png " alt="Keyboard " style="width:100%; ">
+            <div class="carousel-caption ">
+            </div>
+        </div>
 
         <div class="item ">
-            <img src="assets/offer.png" alt="Keyboard" style="height:400px; width:1200px">
-            <div class="carousel-caption">
+            <img src="assets/image2.png " alt="Keyboard2 " style="width:100%; ">
+            <div class="carousel-caption ">
 
-
+                <p style="color:rgb(255, 255, 255) "><b>SECURE COMMUNICATION</b></p>
             </div>
         </div>
 
-        <div class="item">
-            <img src="assets/images/offersimg.png" alt="Keyboard2" style="height:400px; width:1200px">
-            <div class="carousel-caption">
-
-                <!-- <p style="color:rgb(255, 255, 255)"><b>SECURE COMMUNICATION</b></p> -->
-            </div>
-        </div>
-
-        <div class="item active">
-            <img src="assets/home_broadband.png" alt="Keyboard3" style="height:400px; width:1200px">
-            <div class="carousel-caption">
-
+        <div class="item ">
+            <img src="assets/home_broadband.png " alt="Keyboard3 " style="width:100%; ">
+            <div class="carousel-caption ">
+                <p style="color:rgb(255, 255, 255) "><b>HIGH SPEED CONNECTIVITY</b></p>
+                <!-- <p style="color:rgb(12, 6, 6) "><b></b></p> -->
             </div>
         </div>
 
     </div>
 
     <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
-        <span class="sr-only">Previous</span>
+    <a class="left carousel-control " data-slide="prev ">
+        <span class="glyphicon glyphicon-chevron-left "></span>
+        <span class="sr-only ">Previous</span>
     </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right"></span>
-        <span class="sr-only">Next</span>
+    <a class="right carousel-control " data-slide="next ">
+        <span class="glyphicon glyphicon-chevron-right "></span>
+        <span class="sr-only ">Next</span>
     </a>
 </div>
-
-<br>
-<div class="jumbotron" style="padding: 20px; text-align: center;box-shadow: black 2px 2px 5px">
-    <h3>
-        EXCLUSIVE OFFERS
-    </h3><br/>
-    <div class="row">
-
-        <div class="col-md-12">
-            <div class="row">
-                <div class="col-md-4 card" *ngFor="let item of offer_list" style="width: 34rem; background-color: white; border-radius: 5px; text-align: center; box-shadow: black 2px 2px 5px; margin: 8px; padding: 8px;text-align: center">
-                    <b style="font-size: 30px"> {{item.type_of_users}}</b><br><img src="{{item.offer_img}}"><br>
-                    <hr/> {{item.original_amt}} <br/> {{item.offer_percentage}} <br/>
-                    <h3>
-                        {{item.statement}}</h3>
-
-                    <button class="btn btn-success" routerLink="/recharge">GRAB IT NOW</button>
+<br/><br/>
+<div class="row">
+    <div class="col-md-4">
+        <div class="callout callout-default" style="text-align:center">
+            <h3>PRIME MEMBERSHIP</h3>
 
 
+            <img src="assets/Prime_0.png" style="height:150px; width: 150px"><br>
+            <br>
+            <ul type="none">
+                <li>
+                    <i class="fa fa-hand-o-right" aria-hidden="true"> ANYWHERE ANYTIME DATA</i>
+                </li>
+                <li><i class="fa fa-hand-o-right" aria-hidden="true">ULTRA FAST DATA SPEED</i></li>
+            </ul>
 
-                </div>
-            </div>
+
         </div>
+
+    </div>
+    <div class="col-md-4">
+        <div class="callout callout-default" style="text-align:center">
+            <h3>EXCLUSIVE OFF!!</h3>
+            <img src="assets/discount.png" style="height:100px; width: 70px">
+            <ul type="none">
+                <li>
+                    <i class="fa fa-hand-o-right" aria-hidden="true">30% DISCOUNT FOR POSTPAID CUSTOMERS</i>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="callout callout-default" style="text-align:center">
+            <h3>RECHARGE FOR Rs. 200</h3>
+            <img src="assets/recharge.png" style="height:150px; width: 200px"><br>
+            <br>
+            <ul type="none">
+                <li>
+                    <i class="fa fa-phone" aria-hidden="true">GET UNLIMITED VOICE CALLS</i>
+                </li>
+                <li><i class="fa fa-phone" aria-hidden="true">1 GB / DAY</i></li>
+            </ul>
+        </div>
+
     </div>
 
 </div>

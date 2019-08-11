@@ -10,9 +10,7 @@ import { TransactionsComponent } from "./transactions/transactions.component";
 import { ChatSupportComponent } from "./chat-support/chat-support.component";
 import { LoginComponent } from "./login/login.component";
 import { RegisterComponent } from "./register/register.component";
-import { PaymentInitiatorComponent } from "./payment-initiator/payment-initiator.component";
-import { NewconnectionComponent } from "./newconnection/newconnection.component";
-import { TicketsComponent } from "./tickets/tickets.component";
+import { PaymentInitiatorComponent } from './payment-initiator/payment-initiator.component';
 
 const appRoutes: Routes = [
   {
@@ -74,16 +72,6 @@ const appRoutes: Routes = [
     path: "support",
     component: ChatSupportComponent,
     data: { title: "VoizFonica - Support" }
-  },
-  {
-    path: "add",
-    component: NewconnectionComponent,
-    data: { title: "VoizFonica - Connection" }
-  },
-  {
-    path: "tickets",
-    component: TicketsComponent,
-    data: { title: "VoizFonica - Tickets" }
   }
 ];
 
