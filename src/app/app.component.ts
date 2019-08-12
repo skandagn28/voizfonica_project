@@ -20,6 +20,7 @@ export class AppComponent {
     { path: "recharge", name: "QUICK RECHARGE" }
   ];
   menuitems_logged_in: object[] = [ 
+    {path:"logout",name:'LOGOUT'},
     {path:"add",name:'+ NEW CONNECTION'},   
     {path:"tickets",name:'TICKETS'},
     { path: "transactions", name: "TRANSACTIONS" },
