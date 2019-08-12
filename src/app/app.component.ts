@@ -6,28 +6,42 @@ import { Router } from "@angular/router";
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.scss"]
 })
+
 export class AppComponent {
   title = "angular-voizfonica";
-  selectedmenu: number;
-  menuitems: object[] = [
-    { path: "dashboard", name: "Dashboard" },
-    { path: "plans", name: "View plans" },
-    { path: "recharge", name: "Recharge" },
-    { path: "offers", name: "View offers" },
-    { path: "transactions", name: "Transaction history" },
-    { path: "tickets", name: "Support history" }
+  chat_float_hide=false;
+  logged_items=true; //to be authenticatd by user
+  menuitems_logged_out: object[] = [    
+    {path:"login",name:'LOGIN'},
+    {path:"register",name:'REGISTER'},
+    {path:"add",name:'+ NEW CONNECTION'},
+    { path: "offers", name: "OFFERS" },
+    { path: "plans", name: "PLANS" },
+    { path: "recharge", name: "QUICK RECHARGE" }
+  ];
+  menuitems_logged_in: object[] = [ 
+    {path:"add",name:'+ NEW CONNECTION'},   
+    {path:"tickets",name:'TICKETS'},
+    { path: "transactions", name: "TRANSACTIONS" },
+    { path: "offers", name: "OFFERS" },
+    { path: "plans", name: "PLANS" },
+    { path: "recharge", name: "QUICK RECHARGE" },
+    { path: "dashboard", name: "DASHBOARD" }
   ];
 
   constructor(private router: Router) {
-    this.selectedmenu = 0;
   }
 
-  ishome() {
-    return this.router.url.split("/")[1] == "";
+  isHome(){
+    return this.router.url.split("/")[1]=="";
   }
 
-  selectMenu(index: number) {
-    console.log(index);
-    this.selectedmenu = index;
+  show_support(){
+    this.chat_float_hide=false;
   }
+  
+  hide_support(){
+    this.chat_float_hide=true;
+  }
+  
 }

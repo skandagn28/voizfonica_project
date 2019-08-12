@@ -18,3 +18,19 @@ export interface Problems{
      solutions:string;
      type:string;
 }
+
+export interface Chat{
+    id:number;
+    user_id:string;
+    ip_address:string;
+    start_time:string;
+}
+
+export interface Message{
+    chat_id:string;
+    user_id:string;
+    sender_type:string;
+    message_content:string;
+    message_type:string;
+    time_stamp:string;
+}

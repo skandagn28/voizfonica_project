@@ -1,76 +1,117 @@
-<div id="support_box" class="container">
-    <div id="box_head">
-            QUICK SUPPORT
+<div id="support" class="container">
+    <div id="support_head">
+            CHAT SUPPORT
     </div>
-    <div id="support_history">
-        <br>
-        <div class="row" *ngIf="initial_state===true">
-            <div class="col-md-6"></div>
-            <div class="col-md-6 information">
-               Hi I am Voiza, your assistant for the day. How can I help you?
-            </div>
-        </div>
-        <div class="row" *ngIf="initial_state===true && option_state===true">
-            <div class="col-md-6"></div>
-            <div class="col-md-6 information">
-                Please select from below options
-            </div>
-        </div>
-        <div *ngIf="initial_state===true">
-            <div class="row"  *ngFor="let x of problems_list">
-                <div class="col-md-8"></div>
-                <div class="col-md-4 option" *ngIf="x.problems==='Initial'" (click)=display(x.solutions,x.problems);set_tic_type(x.solutions);>
-                    {{x.solutions}}
-                </div>
-            </div> 
-        </div>
-        <div  *ngIf="initial_state==false && reason_box==false" >
-            <div class="row" *ngFor="let x of problems_list">
-                <div class="col-md-8"></div>
-                <div class="col-md-4 information" *ngIf="x.type=='info' && x.problems===current_state;let option_state=false">
-                    {{x.solutions}}
-                </div>
-                <div class="col-md-4 option" *ngIf="x.type=='option' && x.problems===current_state;let option_state=true" (click)=display(x.solutions,x.problems)>
-                    {{x.solutions}}
-                </div>
-            </div>
-            <br>
-            <div class="row" *ngIf="new_state==true">
-                    <div class="col-md-10"></div>
-                    <div class="col-md-2 btn-primary" (click)=router_navigate()>
-                        OK
+    <div id="support_history" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+        <div class="row" *ngFor="let message of messages_display">
+            <div class="col-md-6" *ngIf="message.sender_type=='bot'">
+                <div class="bot_information" *ngIf="message.message_type=='information'">
+                    <div>
+                        {{message.message_content}}
                     </div>
-                </div><br>
-            <div class="row">
-                <div class="col-md-10"></div>
-                <div class="col-md-2 btn-primary" (click)=auto_display();>
-                    BACK
+                    <div class="message_timestamp">
+                        {{message.time_stamp}}
+                    </div>
+                </div>
+                <div *ngIf="message.message_type=='option'">
+                    <div class="col-md-1"></div>
+                    <div class="bot_option col-md-4" (click)="push_message(message.message_content)">
+                        {{message.message_content}}
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row" *ngIf="reason_box==true">
-            <div class="col-md-6"></div>
-            <textarea class="col-md-6" [(ngModel)]="raise_info" id="other_text_box" height="250pxpx"></textarea>
-        </div>
-        <div class="row" *ngIf="reason_box==true">
-            <div class="col-md-7"></div>
-            <div class="col-md-2  btn-primary" (click)=auto_display();>
-                BACK
+            <div class="col-md-6" *ngIf="message.sender_type=='user'">
             </div>
-            <div class="col-md-1"></div>
-            <div class="col-md-2  btn-primary" (click)=raise_ticket()>
-                RAISE TICKET
+            <div class="user_reply col-md-6" *ngIf="message.sender_type=='user'">
+                <div>
+                    {{message.message_content}}
+                </div>
+                <div class="message_timestamp">
+                    {{message.time_stamp}}
+                </div>
             </div> 
-        </div>    
+        </div>
     </div>
+    <div id="user_interaction_section" class="row">
+        <textarea id="user_text_box" class="col-md-10" [(ngModel)]="text_box"></textarea>
+        <div class="col-md-2">
+            <div id="user_send_button" (click)="on_user_submit()">
+                SEND
+            </div>
+        </div>
     </div>
-<br>
-<br>
-<app-tickets></app-tickets>
-<br>
-<br>
-<app-transactions></app-transactions>
-<br>
-<br>
-<app-devices></app-devices>
-<br>
+</div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+<!--<br>
+<div class="row" *ngIf="initial_state===true">
+    <div class="col-md-6"></div>
+    <div class="col-md-6 information">
+        Hi I am Voiza, your assistant for the day. How can I help you?
+    </div>
+</div>
+<div class="row" *ngIf="initial_state===true && option_state===true">
+    <div class="col-md-6"></div>
+    <div class="col-md-6 information">
+        Please select from below options
+    </div>
+</div>
+<div *ngIf="initial_state===true">
+    <div class="row"  *ngFor="let x of problems_list">
+        <div class="col-md-8"></div>
+        <div class="col-md-4 option" *ngIf="x.problems==='Initial'" (click)=display(x.solutions,x.problems);set_tic_type(x.solutions);>
+            {{x.solutions}}
+        </div>
+    </div> 
+</div>
+<div  *ngIf="initial_state==false && reason_box==false" >
+    <div class="row" *ngFor="let x of problems_list">
+        <div class="col-md-8"></div>
+        <div class="col-md-4 information" *ngIf="x.type=='info' && x.problems===current_state;let option_state=false">
+            {{x.solutions}}
+        </div>
+        <div class="col-md-4 option" *ngIf="x.type=='option' && x.problems===current_state;let option_state=true" (click)=display(x.solutions,x.problems)>
+            {{x.solutions}}
+        </div>
+    </div>
+    <br>
+    <div class="row" *ngIf="new_state==true">
+            <div class="col-md-10"></div>
+            <div class="col-md-2 btn-primary" (click)=router_navigate()>
+                OK
+            </div>
+        </div><br>r
+    <div class="row">
+        <div class="col-md-10"></div>
+        <div class="col-md-2 btn-primary" (click)=auto_display();>
+            BACK
+        </div>
+    </div>
+</div>
+<div class="row" *ngIf="reason_box==true">
+    <div class="col-md-6"></div>
+    <textarea class="col-md-6" [(ngModel)]="raise_info" id="other_text_box" height="250pxpx"></textarea>
+</div>
+<div class="row" *ngIf="reason_box==true">
+    <div class="col-md-7"></div>
+    <div class="col-md-2  btn-primary" (click)=auto_display();>
+        BACK
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-2  btn-primary" (click)=raise_ticket()>
+        RAISE TICKET
+    </div> 
+</div>    
+</div>
+</div>-->

@@ -84,7 +84,7 @@ const appRoutes: Routes = [
     path: "tickets",
     component: TicketsComponent,
     data: { title: "VoizFonica - Tickets" }
-  }
+  },
 ];
 
 @NgModule({
