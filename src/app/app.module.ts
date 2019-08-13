@@ -10,7 +10,7 @@ import { RechargeComponent } from "./recharge/recharge.component";
 import { OffersComponent } from "./offers/offers.component";
 import { DevicesComponent } from "./devices/devices.component";
 import { StoreComponent } from "./store/store.component";
-import {TransactionsComponent,WalletDataDialog,CardDataDialog} from "./transactions/transactions.component";
+import {TransactionsComponent,WalletDataDialog,CardDataDialog, TicketDataDialog} from "./transactions/transactions.component";
 import { ChatSupportComponent } from "./chat-support/chat-support.component";
 import { LoginComponent } from "./login/login.component";
 import { RegisterComponent } from "./register/register.component";
@@ -22,7 +22,7 @@ import {HttpClient,HttpClientModule} from "../../node_modules/@angular/common/ht
 import { ApiService } from "./api.service";
 import {MatDialogRef,MatDialogModule} from "../../node_modules/@angular/material/dialog";
 import { NewconnectionComponent } from "./newconnection/newconnection.component";
-import { TicketsComponent } from "./tickets/tickets.component";
+import { TicketsComponent, TicketDataDialog1 } from "./tickets/tickets.component";
 
 
 @NgModule({
@@ -46,6 +46,9 @@ import { TicketsComponent } from "./tickets/tickets.component";
     CardDataDialog,
     NewconnectionComponent,
     TicketsComponent,
+    TicketDataDialog,
+    TicketDataDialog1
+
   ],
   imports: [
     BrowserModule,
@@ -58,6 +61,6 @@ import { TicketsComponent } from "./tickets/tickets.component";
   ],
   providers: [{ provide: MatDialogRef, useValue: {} }, ApiService],
   bootstrap: [AppComponent],
-  entryComponents: [DialogDataExampleDialog, WalletDataDialog, CardDataDialog]
+  entryComponents: [DialogDataExampleDialog, WalletDataDialog, CardDataDialog,TicketDataDialog,TicketDataDialog1]
 })
 export class AppModule {}

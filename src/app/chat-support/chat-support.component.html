@@ -29,6 +29,9 @@
                 <div class="message_timestamp">
                     {{message.time_stamp}}
                 </div>
+            </div>
+            <div class="col-md-12" *ngIf="message.message_content=='Your transactions'">
+                <app-transactions></app-transactions>
             </div> 
         </div>
     </div>

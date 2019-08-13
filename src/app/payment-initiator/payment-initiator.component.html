@@ -3,6 +3,7 @@
         PAYMENT
     </div>
     <div id="payment_content">
+        <div class="content">
         Please select your preferred mode of payment
         <br>
         <br>
@@ -17,19 +18,20 @@
                 <label><input [(ngModel)]="payment_mode"  type="radio" name="payment_mode" value="3">&nbsp;Other wallets</label>
             </div>
         </form>
+    </div>
         <br>
         <br>
         <div *ngIf="payment_mode==1" id="card_payment" class="container">
             <div id="card_payment_heading">
                 CREDIT & DEBIT CARDS
             </div>
-            <form #f="ngForm" (ngSubmit)="validate(f)">
+            <form class="content" #f="ngForm" (ngSubmit)="validate(f)">
                 <div id="card_payment_content">
                     <b>Please enter your card details</b>
                     <br>
                     <br>
 
-                    <div class="row">
+                    <div class="row ">
 
                         <div class="col-md-4">
 
@@ -58,18 +60,16 @@
                                 Enter proper date!!! <br><br>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <input type="radio" name="card_type" checked> &nbsp;
-                            <img src="../../assets/images/visa.png" height="50" width="50">
+                        <!-- <div class="col-md-4">
+                            <img class="cards" name="card_type" value="1" src="../../assets/images/visa.png" height="50" width="50" active>
                             <br>
                             <br>
-                            <input type="radio" name="card_type"> &nbsp;
-                            <img src="../../assets/images/mastercard.jpg" height="50" width="50">
-                        </div>
+                            <img class="cards"  name="card_type" value="2" src="../../assets/images/mastercard.jpg" height="50" width="50">
+                        </div> -->
 
                     </div>
                     <br>
-                    <button type="submit" class="btn-primary" id="card_make_payment">Make payment</button>
+                    <button type="submit" class="btn-primary" id="card_make_payment" (click)="post_card_based(card_name1.value,card_number1.value,card_cvv1.value,200,f)">Make payment</button>
                     <br>
                     <br>
 
@@ -81,6 +81,7 @@
                 NET BANKING
             </div>
             <br>
+            <div class="content">
             <b>Please select the preferred bank</b>
             <br>
             <br>
@@ -112,6 +113,7 @@
             <b>Note: You will be redirected for the payment ...</b>
             <br>
             <button class="btn-primary" id="redirect_accept">Ok</button>
+        </div>
             <br>
             <br>
         </div>
@@ -120,10 +122,11 @@
                 WALLETS
             </div>
             <br>
-            <b>Please select the preferred bank</b>
-            <div class="row">
+            <div class="content">
+            <b>Please select the preferred wallet</b>
+            <div class="row content">
                 <div class="col-md-3">
-                    <input type="radio" name="wallet_options"> <img src="../../assets/images/phonepe.png" height="50px" width="100px">
+                    <input type="radio" name="wallet_options" checked> <img src="../../assets/images/phonepe.png" height="50px" width="100px">
                 </div>
                 <div class="col-md-3">
                     <input type="radio" name="wallet_options"> <img src="../../assets/images/paytm.png" height="50px" width="100px">
@@ -139,6 +142,7 @@
             <b>Note: You will be redirected for the payment ...</b>
             <button class="btn-primary" id="redirect_accept">Ok</button>
 
+        </div>
         </div>
     </div>
 </div>

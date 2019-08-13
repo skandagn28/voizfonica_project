@@ -60,7 +60,7 @@ export class ChatSupportComponent implements OnInit {
   }
 
   get_ip(){
-    this.http.get<any>('https://api.ipify.org?format=json').subscribe(data => {this.ip_address=data['ip'];this.post_chat();});
+    this.http.get<any>('https://api.ipify.org?format=json').subscribe(data => {this.ip_address=data['ip'];console.log(this.ip_address);this.post_chat();});
   }
   
   post_chat(){

@@ -1,0 +1,21 @@
+.btn-primary {
+     margin:10px;
+     background-color:black;
+     border: 1px solid black;
+     font-size: 12px;
+     padding: 5px;
+     font-weight: bolder;
+     border-radius: 5px;
+     color: white;
+   }
+   
+   .btn-primary:hover {
+     background-color: rgba(0, 0, 0, 0.5);
+   }
+
+#ticket_det{
+  color:black;
+  border:1px solid black;
+  border-radius: 5px;
+  font-weight: normal;
+}

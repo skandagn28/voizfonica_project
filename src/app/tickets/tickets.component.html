@@ -1,8 +1,7 @@
-<div id="ticket_box" class="container">
-  <div id="box_head">
+<div id="ticket_history" class="container">
+  <div id="tickets_head">
     TICKETS
   </div>
-  <br />
   <table border="1" class="center">
     <tr>
       <th>
@@ -10,6 +9,9 @@
       </th>
       <th>
         Ticket id.
+      </th>
+      <th>
+          State
       </th>
       <th>
         Ticket type
@@ -24,17 +26,20 @@
         Closed on
       </th>
       <th>
+        Ticket details
+      </th>
+      <th>
         Resolution response
       </th>
       <th>
-        State
+        Transaction id
       </th>
-      <!-- <th>
-                      Re-action
-                  </th>
-                  <th>
-                      Action on ticket
-                  </th> -->
+      <th>
+        Ticket reaction details
+      </th>
+      <th>
+        Action
+      </th>
     </tr>
     <tr *ngFor="let ticket of tickets_list; let i = index">
       <td>
@@ -42,6 +47,9 @@
       </td>
       <td>
         {{ ticket.id }}
+      </td>
+      <td>
+          {{ ticket.ticket_status }}
       </td>
       <td>
         {{ ticket.ticket_type }}
@@ -56,31 +64,27 @@
         {{ ticket.ticket_resolved_date }}
       </td>
       <td>
+        <b *ngIf="ticket.chat_id==''">
+        {{ticket.ticket_details}}
+        </b>
+        <button *ngIf="ticket.chat_id!=''" class="btn-primary">
+          Open chat
+        </button>
+      </td>
+      <td>
         {{ ticket.ticket_resolution_response }}
       </td>
       <td>
-        {{ ticket.ticket_status }}
+        {{ticket.transactions_linked}}
       </td>
-      <!-- <td>
-                    {{ticket.ticket_re_action_reason}}
-                </td> -->
-
-      <!-- <td>
-                      <input type="text">
-                  </td>
-                  <td *ngIf="ticket.ticket_status=='Open'">
-                      <button class="btn-primary">
-                          Close ticket
-                      </button>
-                  </td>
-                  <td *ngIf="ticket.ticket_status=='Closed'">
-                      <button class="btn-primary">
-                          Open ticket
-                      </button>
-                  </td> -->
+      <td>
+        {{ticket.ticket_re_action_reason}}
+      </td>
+      <td>
+        <button class="btn-primary" *ngIf="ticket.ticket_status=='Closed'" (click)='reopen_ticket(ticket.id,ticket.ticket_status,ticket.ticket_type,ticket.ticket_issue_date,ticket.ticket_details,ticket.ticket_resolution_proposed_date,ticket.ticket_resolved_date,ticket.ticket_resolution_response,ticket.transaction_id,ticket.chat_id)'>
+          Reopen
+        </button>
+      </td>
     </tr>
   </table>
-
-  <br />
-  <br />
 </div>

@@ -10,6 +10,22 @@ export class ApiService {
   baseUrl="http://localhost:8000/";
   httpHeaders = new HttpHeaders({ "content-type": "application/json" });
   constructor(private http: HttpClient) {}
+
+  getTickets(): Observable<Tickets[]> {
+    return this.http.get<Tickets[]>(this.baseUrl + "support/ticket", {
+      headers: this.httpHeaders
+    });
+  }
+  openTicket(ticket_details): Observable<Tickets[]> {
+    return this.http.post<Tickets[]>(this.baseUrl + "support/ticket", ticket_details, {
+      headers: this.httpHeaders
+    });
+  }
+  reopenTicket(details): Observable<Tickets[]> {
+    return this.http.put<Tickets[]>(this.baseUrl + "support/ticket",details, {
+      headers: this.httpHeaders
+    });
+  }
   
   createChat(chat_details): Observable<Chat[]> {
     return this.http.post<Chat[]>(this.baseUrl + "support/chat", chat_details, {
@@ -34,11 +50,31 @@ export class ApiService {
     });
   }
 
-  getProblems(): Observable<Problems[]> {
-    return this.http.get<Problems[]>(this.baseUrl + "support/problems", {
+  getTransactions(): Observable<any> {
+    return this.http.get<any>(
+      "http://localhost:8000/transaction_history/"
+    );
+  }
+
+  postTransactions(transaction_details):Observable<any>{
+    return this.http.post<any>(this.baseUrl + "transaction_history/", transaction_details, {
       headers: this.httpHeaders
     });
   }
+
+  editTransaction(transaction_details):Observable<any>{
+    return this.http.put<any>(this.baseUrl + "transaction_history/", transaction_details, {
+      headers: this.httpHeaders
+    });
+  }
+
+
+  postCards(card_details):Observable<any>{
+    return this.http.post<any>(this.baseUrl + "cards/", card_details, {
+      headers: this.httpHeaders
+    });
+  }
+
   getPlans(): Observable<any> {
     return this.http.get<any>("http://localhost:8000/plans/getPlans/");
   }
@@ -56,11 +92,6 @@ export class ApiService {
     return this.http.get<any>("http://localhost:8000/offers/getOffers/");
   }
 
-  getTransactions(): Observable<any> {
-    return this.http.get<any>(
-      "http://localhost:8000/transaction_history/getTransactions/"
-    );
-  }
 
   connection(conn: object): Observable<any> {
     return this.http.post<any>("http://127.0.0.1:8000/connection/new/", conn);
@@ -73,19 +104,5 @@ export class ApiService {
   }
  
 
-  getTickets(): Observable<Tickets[]> {
-    return this.http.get<Tickets[]>(this.baseUrl + "/ticket", {
-      headers: this.httpHeaders
-    });
-  }
-  openTicket(ticket_details): Observable<Tickets[]> {
-    return this.http.post<Tickets[]>(this.baseUrl + "/ticket", ticket_details, {
-      headers: this.httpHeaders
-    });
-  }
-  reopenTicket(id): Observable<Tickets[]> {
-    return this.http.put<Tickets[]>(this.baseUrl + "/ticket/" + id + "/", {
-      headers: this.httpHeaders
-    });
-  }
+
 }

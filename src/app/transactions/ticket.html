@@ -1,0 +1,17 @@
+<div>
+     <div class="row">
+          <div class="col-md-3"></div>
+          <div class=col-md-6>
+               <textarea id="ticket_det" #textinfo rows=5></textarea>
+          </div>
+          <div class="col-md-3"></div>
+     </div>
+     <div class="row">
+          <div class="col-md-3"></div>
+          <div class=col-md-6>
+               <button *ngIf="ticket_created==false" class="btn-primary" (click)="raise_ticket(data.trans_array,textinfo.value,data.id)">Raise ticket</button>
+               <b *ngIf="ticket_created==true" >Ticket created successfully</b>
+          </div>
+          <div class="col-md-3"></div>
+     </div>
+</div>

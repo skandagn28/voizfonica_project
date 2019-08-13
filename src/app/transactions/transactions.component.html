@@ -1,10 +1,7 @@
-<br />
-<br />
-<div id="transactionhistory" class="container">
-  <div id="transactions_heading">
-    TRANSACTION
+<div id="transaction_history" class="container">
+  <div id="transactions_head">
+    TRANSACTIONS
   </div>
-  <br />
   <table border="1" id="transaction_register" class="center">
     <tr>
       <th>
@@ -16,15 +13,14 @@
       <th>
         Date and Time
       </th>
-
       <th>
         State
       </th>
       <th>
-        Wallet_linked
+        Payment mode
       </th>
       <th>
-        Card_linked
+        Payment details
       </th>
       <th>
         Invoice
@@ -33,9 +29,9 @@
         Raise ticket
       </th>
     </tr>
-    <tr *ngFor="let i of trans_array">
+    <tr *ngFor="let i of trans_array;let x=index">
       <td>
-        {{ i._id }}
+        {{x+1}}
       </td>
       <td>
         {{ i.transaction_amount }}
@@ -43,12 +39,31 @@
       <td>
         {{ i.transaction_date_time }}
       </td>
-
       <td>
         {{ i.transaction_state }}
       </td>
+      <td>
+        {{i.payment_mode}}
+      </td>
       <td style="text-align: center">
-        <button
+        <b *ngIf="i.payment_mode=='Net Banking'"> 
+          {{i.bank_name}}
+        </b>
+        <button *ngIf="i.payment_mode=='Card'"
+          class="btn-primary"
+          (click)="
+            openCardDialog(
+              i.card_linked.card_holder_name,
+              i.card_linked.card_type,
+              i.card_linked.card_number,
+              i.card_linked.card_cvv,
+              i.card_linked.card_bank
+            )
+          "
+        >
+          View card details
+        </button>
+        <button *ngIf="i.payment_mode=='Wallet'"
           class="btn-primary"
           (click)="
             openWalletDialog(
@@ -58,41 +73,30 @@
             )
           "
         >
-          View wallet linked
-        </button>
-      </td>
-      <td style="text-align: center">
-        <button
-          class="btn-primary"
-          (click)="
-            openCardDialog(
-              i.card_linked.card_holder_name,
-              i.card_linked.card_type,
-              i.card_linked.card_number,
-              i.card_linked.cvv,
-              i.card_linked.card_bank
-            )
-          "
-        >
-          View cards linked
+          View wallet details
         </button>
       </td>
       <td>
         <button class="btn-primary">
-          Download Invoice
+          Download invoice
         </button>
       </td>
       <td>
-        <button class="btn-primary">
-          Raise Ticket
-        </button>
+        <div *ngIf="i.transaction_state=='Failed'">
+            <button *ngIf="i.refund_status==false" class='btn-primary' (click)=refund_ticket(trans_array,i.id)>
+                Refund request
+            </button>
+            <b *ngIf="i.refund_status==true" class='row'>
+                Refund already requested
+            </b>
+        </div>
+          <button *ngIf="i.ticket_status==false" class="btn-primary" (click)="open_raise_ticket(trans_array,i.id)">Raise ticket</button>
+        <b *ngIf="i.ticket_status==true" class="row">
+          Ticket is in process
+        </b>
+        <br>
       </td>
     </tr>
   </table>
-
-  <br />
-  <br />
 </div>
 
-<br />
-<br />

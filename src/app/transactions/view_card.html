@@ -1,7 +1,4 @@
-<table
-  style="border-spacing: 15px;
-  border-collapse: separate; text-align: center"
->
+<table style="border-spacing: 15px; border-collapse: separate; text-align: center">
   <tr>
     <td>Card holder name:</td>
     <td>{{ data.name }}</td>
@@ -15,7 +12,15 @@
     <td>{{ data.number }}</td>
   </tr>
   <tr>
+    <td>Card cvv:</td>
+    <td>{{ data.cvv }}</td>
+  </tr>
+  <tr>
     <td>Card bank:</td>
     <td>{{ data.bank }}</td>
+  </tr>
+  <tr>
+    <td>Processing charges:</td>
+    <td>{{ data.process }}</td>
   </tr>
 </table>

@@ -1,55 +1,56 @@
 #payment {
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    ;
-    padding: 0px;
-    border-radius: 5px;
-    overflow: hidden;
     box-shadow: black 2px 2px 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding:0px;
+    overflow: hidden;
 }
 
 #payment_heading {
-    color: black;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.2);
-    ;
-    font-size: 24px;
-    font-weight: bolder;
+    border-bottom: 1px solid white;
+    background-color: black;
+    padding:10px;
+    text-align:center;
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
 }
 
 #payment_content {
-    padding: 25px;
-}
-
-.btn-primary {
-    background-color: rgb(255, 255, 255);
-    ;
-    border: 1px solid black;
-    font-size: 18px;
-    padding: 10px;
-    font-weight: bolder;
-    color: black;
-    border-radius: 5px;
-}
-
-.btn-primary:hover {
-    background-color: rgba(0, 0, 0, 0.2);
-    ;
-}
-
-#card_payment {
-    border: 1px solid rgba(0, 0, 0, 0.2);
     padding: 0px;
+}
+  
+.btn-primary {
+    margin:10px;
+    background-color:black;
+    border: 1px solid black;
+    font-size: 12px;
+    padding: 5px;
+    font-weight: bolder;
     border-radius: 5px;
-    overflow: hidden;
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+#card_payment {
     box-shadow: black 2px 2px 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding:0px;
+    overflow: hidden;
 }
 
 #card_payment_heading {
-    color: black;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid white;
+    background-color: black;
+    padding:10px;
+    text-align:center;
+    font-weight: bold;
     font-size: 18px;
-    font-weight: bolder;
+    color: white;
 }
 
 #card_payment_content {
@@ -61,13 +62,11 @@
 }
 
 #redirection_net_banking {
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    padding: 0px;
-    text-align: center;
-    max-height: 300px;
-    border-radius: 5px;
-    overflow: hidden;
     box-shadow: black 2px 2px 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding:0px;
+    overflow: hidden;
 }
 
 #redirect_accept {
@@ -78,23 +77,20 @@
 }
 
 #redirection_wallets {
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    ;
-    padding: 0px;
-    text-align: center;
-    max-height: 250px;
-    border-radius: 5px;
-    overflow: hidden;
     box-shadow: black 2px 2px 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding:0px;
+    overflow: hidden;
 }
 
 select {
-    border-color: rgba(0, 0, 0, 0.2);
+    border-color: black;
     min-width: 300px;
 }
 
 select:hover {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .error {
@@ -102,17 +98,25 @@ select:hover {
 }
 
 #net_banking_heading {
-    color: black;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid white;
+    background-color: black;
+    padding:10px;
+    text-align:center;
+    font-weight: bold;
     font-size: 18px;
-    font-weight: bolder;
+    color: white;
 }
 
 #wallets_heading {
-    color: black;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid white;
+    background-color: black;
+    padding:10px;
+    text-align:center;
+    font-weight: bold;
     font-size: 18px;
-    font-weight: bolder;
+    color: white;
+}
+
+.content{
+    padding:25px;
 }
