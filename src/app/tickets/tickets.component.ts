@@ -59,7 +59,7 @@ export class TicketDataDialog1 {
 export class TicketsComponent implements OnInit {
   tickets_list: any = [];
 
-  constructor(public dialog: MatDialog,private apiService: ApiService) {}
+  constructor(public dialog: MatDialog,private apiService: ApiService, private router:Router) {}
 
   ngOnInit() {
     this.get_tickets();
@@ -83,5 +83,8 @@ export class TicketsComponent implements OnInit {
         chat_id:chat_id,
       }
     });
+  }
+  navigate_new(){
+    this.router.navigate(['newticket']);
   }
 }

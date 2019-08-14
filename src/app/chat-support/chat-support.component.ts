@@ -79,6 +79,15 @@ export class ChatSupportComponent implements OnInit {
     this.apiService.getChat().subscribe(data=>{this.chat_set=data;this.chat_set.forEach(element => {if((element.ip_address==this.ip_address)&&(element.start_time==this.start_time)&&(element.user_id==this.user_id)){
       this.chat_id=element.id;
       console.log(this.chat_id);
+      this.message={
+        chat_id:this.chat_id,
+        user_id:"",
+        sender_type:'bot',
+        message_content:"Hi",
+        message_type:'Information',
+        time_stamp:this.time_stamp
+      };
+      this.post_message();
     } 
     });}) ; 
   }

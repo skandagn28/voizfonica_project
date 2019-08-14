@@ -15,9 +15,19 @@
                 </div>
                 <div *ngIf="message.message_type=='option'">
                     <div class="col-md-1"></div>
-                    <div class="bot_option col-md-4" (click)="push_message(message.message_content)">
+                    <div class="bot_option col-md-4"  *ngIf="message.message_content!='Ok, redirect me to new connection page' && message.message_content!='Ok, redirect me to new ticket page'" (click)="push_message(message.message_content)">
                         {{message.message_content}}
                     </div>
+                    <a href="/add"> 
+                        <div class="bot_option col-md-4"  *ngIf="message.message_content=='Ok, redirect me to new connection page'" (click)="push_message(message.message_content)">
+                            {{message.message_content}}
+                        </div>
+                    </a>
+                    <a href="/newticket"> 
+                        <div class="bot_option col-md-4"  *ngIf="message.message_content=='Ok, redirect me to new ticket page'" (click)="push_message(message.message_content)">
+                            {{message.message_content}}
+                        </div>
+                    </a>
                 </div>
             </div>
             <div class="col-md-6" *ngIf="message.sender_type=='user'">
@@ -32,6 +42,9 @@
             </div>
             <div class="col-md-12" *ngIf="message.message_content=='Your transactions'">
                 <app-transactions></app-transactions>
+            </div> 
+            <div class="col-md-12" *ngIf="message.message_content=='Your tickets'">
+                <app-tickets></app-tickets>
             </div> 
         </div>
     </div>

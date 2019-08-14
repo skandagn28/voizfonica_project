@@ -23,6 +23,7 @@ import { ApiService } from "./api.service";
 import {MatDialogRef,MatDialogModule} from "../../node_modules/@angular/material/dialog";
 import { NewconnectionComponent } from "./newconnection/newconnection.component";
 import { TicketsComponent, TicketDataDialog1 } from "./tickets/tickets.component";
+import { NewticketComponent } from './newticket/newticket.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { TicketsComponent, TicketDataDialog1 } from "./tickets/tickets.component
     NewconnectionComponent,
     TicketsComponent,
     TicketDataDialog,
-    TicketDataDialog1
+    TicketDataDialog1,
+    NewticketComponent
 
   ],
   imports: [
